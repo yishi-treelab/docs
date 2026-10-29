@@ -1,0 +1,78 @@
+---
+title: "Global chat"
+description: "Ask the agent about the suppliers, products, and inquiries you're looking at, without leaving the page."
+icon: "comments"
+---
+
+Global chat puts the AI agent at the bottom of your **Supplier**, **Product**, and **Inquiry** pages. It knows which page you're on and which records you've selected, so you can ask about them directly without copying data into a separate chat.
+
+<Frame caption="Global chat on a supplier page. The context chip shows what the agent can see.">
+  {/* TODO: screenshot of the Global chat bar open on a Supplier or Product page, with the context chip visible */}
+
+  ![Global Chat](/images/global-chat.png "Global Chat")
+</Frame>
+
+## Where it's available
+
+| Page | What the agent sees |
+| --- | --- |
+| **Supplier** list | The rows you've selected |
+| **Supplier** detail | The supplier you're viewing |
+| **Product** list | The rows you've selected |
+| **Product** detail | The product you're viewing |
+| **Inquiry** list | The rows you've selected |
+| **Inquiry** detail | The inquiry you're viewing |
+
+<Note>
+  On list pages, the agent only sees the rows you **select**, not your current filters or the whole list. Select rows first, then ask.
+</Note>
+
+## Example questions
+
+<Tabs>
+  <Tab title="Suppliers">
+    ```text
+    Which of the suppliers I selected are missing a contact email?
+    ```
+
+    ```text
+    What products is this supplier linked to?
+    ```
+  </Tab>
+  <Tab title="Products">
+    ```text
+    Summarize the main categories of the products I selected.
+    ```
+
+    ```text
+    Which inquiries has this product been part of recently?
+    ```
+  </Tab>
+  <Tab title="Inquiries">
+    ```text
+    Summarize the current status of these inquiries.
+    ```
+
+    ```text
+    Which suppliers haven't replied yet?
+    ```
+  </Tab>
+</Tabs>
+
+## Making changes with the agent
+
+Global chat can also update your workspace, for example by filling in fields, adding products to a list, or creating a draft. Anything that changes data asks you first:
+
+- **Reading data** (searching, summarizing, looking up related records) runs right away.
+- **Edits** (creating drafts, updating fields, adding to lists) show a preview for you to confirm.
+- **High-impact actions** (deleting records, submitting an inquiry, or sending messages to suppliers) show exactly what will happen and always need your confirmation.
+
+<Warning>
+  The agent never runs bulk deletes based on filters, changes permissions, or modifies workspace settings from chat.
+</Warning>
+
+## Conversations follow you
+
+- The chat stays open as you move between pages. Each new message uses the context of the page you're on at that moment.
+- Click **New chat** to start fresh with the current page's context. Earlier chats stay in your history.
+- Click **Open in AI Chat** to continue the conversation in the full-screen AI chat.

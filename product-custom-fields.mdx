@@ -1,0 +1,75 @@
+---
+title: "Custom fields"
+description: "Add your own product attributes, like season, buyer, or target margin, with extension fields."
+icon: "pen-ruler"
+---
+
+Product custom fields, called **Extension fields** in the app, let you record product attributes specific to your business. Examples include _Season_, _Buyer_, _Target margin_, or _Compliance documents_. They work the same way as [supplier custom fields](/supplier-custom-fields), but product and supplier fields are managed separately.
+
+<Info>
+  Extension fields are a Pro feature. Only workspace **Admins** can create, edit, reorder, or delete fields.
+</Info>
+
+## Create a field
+
+<Steps>
+  <Step title="Open a product's edit form">
+    Open any product and click the edit (pencil) icon at the top right. Scroll to **Extension fields**.
+  </Step>
+  <Step title="Click Customize field">
+    A list of your workspace's existing product fields appears.
+  </Step>
+  <Step title="Click Add new field">
+    Enter a **Field name**, choose a **Field type**, and optionally add a **Description**.
+  </Step>
+  <Step title="Save">
+    The field is added to every product in your workspace.
+  </Step>
+</Steps>
+
+<Frame caption="The same eight field types are available for products and suppliers.">
+  ![Product Inquiries](/images/field-types.png "Product Inquiries")
+</Frame>
+
+## Field types
+
+| Type | Product example |
+| --- | --- |
+| **Text** | _Buyer_ |
+| **Single select** | _Season_: SS26 / FW26 |
+| **Multiple select** | _Sales channels_: Amazon, DTC, Wholesale |
+| **Number** | _Target margin_ (Percentage format) |
+| **Formula** | _Landed cost_ = A + B + C |
+| **Attachment** | _Compliance documents_ |
+| **Rich text** | _Fit comments_ |
+| **Cascading select** | _Department_ → _Sub-category_ |
+
+See [Field types](/supplier-custom-fields#field-types) for details on each type, including how to write formulas.
+
+## Manage fields
+
+From **Customize field**, drag fields to reorder them, click the pencil icon to edit, or click the trash icon to delete.
+
+<Warning>
+  Deleting a field removes its values from every product record. This can't be undone.
+</Warning>
+
+## Where custom fields show up
+
+<Columns cols={2}>
+  <Card title="Product detail" icon="cube">
+    The **Extension fields** tab on every product.
+  </Card>
+
+  <Card title="Product list" icon="table" href="/product-list">
+    Add fields as columns with **Fields**, and filter by them in the **Custom fields** filter section.
+  </Card>
+
+  <Card title="Email templates" icon="envelope" href="/email-templates">
+    Insert field values into inquiry emails as **Product** variables.
+  </Card>
+
+  <Card title="Product table in emails" icon="table-cells">
+    Show custom fields as extra columns in the product table that's sent to suppliers.
+  </Card>
+</Columns>

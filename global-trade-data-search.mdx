@@ -1,0 +1,82 @@
+---
+title: "Global trade data"
+description: "Ask the agent about real customs shipment records to see who exports what, to whom, and how much."
+icon: "ship"
+---
+
+SourceReady includes customs and bill-of-lading records: individual shipments between exporters and importers around the world. Ask about them in plain language to check a supplier's real export history, find who supplies a brand, or size a trade flow.
+
+<Frame caption="Trade data answers are grounded in shipment records.">
+  {/* TODO: screenshot of a trade-data answer (e.g. "Top exporters of cotton socks to Germany in 2025") */}
+
+  ![Trade Data](/images/trade-data.png "Trade Data")
+</Frame>
+
+## What you can ask
+
+<Columns cols={2}>
+  <Card title="Supplier export history" icon="industry">
+    _"Who are Elite Long Thanh's biggest customers, and where do they ship?"_
+  </Card>
+
+  <Card title="Who supplies a brand" icon="tag">
+    _"Which Vietnamese factories ship to Lululemon?"_
+  </Card>
+
+  <Card title="Top exporters and importers" icon="ranking-star">
+    _"Top 10 exporters of bamboo socks from China to the Netherlands last year"_
+  </Card>
+
+  <Card title="Volume over time" icon="chart-column">
+    _"Monthly shipment volume for this supplier over the last 24 months"_
+  </Card>
+</Columns>
+
+Each shipment record can include:
+
+- Shipment date and bill-of-lading IDs
+- Exporter and importer names and countries
+- Product description, HS code, and category
+- Origin and destination
+- Weight, quantity, and declared value (CIF, in USD)
+- Transport, vessel, and container details
+
+## Combine with supplier search
+
+Trade data works best alongside [supplier search](/supplier-search):
+
+<Steps>
+  <Step title="Find candidates">
+    ```text
+    Chinese sock manufacturers exporting to Germany or the Netherlands
+    ```
+  </Step>
+  <Step title="Verify with shipments">
+    ```text
+    For the top 5, show their actual shipments to Germany in the last 12 months.
+    ```
+  </Step>
+  <Step title="Compare">
+    ```text
+    Compare them by shipment count, main buyers, and average shipment weight.
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+  In the manual filter, turn on **Shipments → Customs data available** to only see suppliers with trade records. You can also open any supplier profile and check its **Shipments** tab.
+</Tip>
+
+## Data coverage
+
+<Warning>
+  Trade data is powerful but not complete. Keep these limits in mind:
+
+  - **Records start on January 1, 2021.** Questions about earlier years are out of range.
+  - **Recent months can lag by 1–4 months**, depending on the country.
+  - **Country coverage varies.** Some countries publish partial data, and some trade flows are inferred from the partner country's records.
+  - **Fields can be sparse or inconsistent.** Descriptions, categories, and weights come from customs declarations, so read them with care.
+  - **Not every exporter is linked to a supplier profile yet.** The agent can still search by company name.
+</Warning>
+
+If you ask about a time range the data doesn't cover, the agent tells you instead of guessing.

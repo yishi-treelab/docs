@@ -1,0 +1,227 @@
+---
+title: "Order details"
+description: "See one order's risk and milestones, update a step, and check everything that's happened to it."
+icon: "file-lines"
+---
+
+Click any order on the [Orders list](/orders) to open its detail page. Here you'll see why the order is at risk, update its milestones, and review its history.
+
+<Frame caption="An order's detail page, open on the Milestones tab.">
+  ![PO details page for NSO-260812-TS01 with In progress and Overdue tags, the Risk section showing At risk 22 days late, and the Milestones stepper with completed, delayed, and upcoming steps](/images/wip/order-detail-overview.png)
+</Frame>
+
+## The header
+
+<Frame caption="The order header and tabs.">
+  ![Order header with the PO number, supplier, product, and owner, the Email supplier, Activity, Edit, and More buttons, and the Milestones, Basic info, Files, and Updates tabs](/images/wip/order-detail-header.png)
+</Frame>
+
+The header shows the PO #, its status (such as **In progress**), any risk tags that matched (such as **Overdue**), and the supplier, product, and owner.
+
+<table>
+  <colgroup>
+    <col width="192" />
+    <col width="515" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Button</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Email supplier**</td>
+      <td>Opens the **Emails** panel with this order's [WIP tracker](/wip-tracker) email thread</td>
+    </tr>
+    <tr>
+      <td>Clock icon (**Activity**)</td>
+      <td>Opens the [Activity sidebar](#activity)</td>
+    </tr>
+    <tr>
+      <td>Pencil icon (**Edit order**)</td>
+      <td>Opens the order form. See [Edit an order](/create-order#edit-an-order)</td>
+    </tr>
+    <tr>
+      <td>**···** (**More**)</td>
+      <td>**Re-run risk check**, **Fill plan dates**, and **Recalculate plan dates**</td>
+    </tr>
+  </tbody>
+</table>
+
+**Fill plan dates** fills empty plan dates from the order's lead times. **Recalculate plan dates** rewrites the plan dates of every open step. Completed steps keep their dates.
+
+## Milestones tab
+
+### Risk
+
+The **Risk** section explains the order's health. It shows the health label, how many risks were flagged, and when they were last checked.
+
+<Frame caption="One risk tag matched, caused by five late milestones.">
+  ![Risk section showing At risk 22 days late, 1 risk flagged, last evaluated time, and the Overdue tag with High severity listing late milestones such as PP SAMPLE SENT +22d](/images/wip/order-detail-risk.png)
+</Frame>
+
+Each matched tag shows its severity, why it matched, and the milestones that caused it, worst first. Click a milestone chip to jump to that step. Click **Show details** or **Hide details** to expand or collapse the list.
+
+Click **Re-run risk check** to check the order again now, for example after you change a [risk tag](/risk-definition).
+
+### The milestone stepper
+
+The **Milestones** section shows the order's profile and lead time set, then one node per step.
+
+<Frame caption="The milestone stepper.">
+  ![Milestones stepper with two green completed steps, five red delayed steps showing how many days late, and grey upcoming steps with plan dates](/images/wip/order-detail-stepper.png)
+</Frame>
+
+<table>
+  <colgroup>
+    <col width="177" />
+    <col width="459" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Green check</td>
+      <td>Completed</td>
+    </tr>
+    <tr>
+      <td>Dash</td>
+      <td>Skipped, or not required</td>
+    </tr>
+    <tr>
+      <td>Blue arrow</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>Red arrow</td>
+      <td>Delayed: past its plan date and not done. The label shows how many days late</td>
+    </tr>
+    <tr>
+      <td>Grey dot</td>
+      <td>Pending: not started yet</td>
+    </tr>
+    <tr>
+      <td>**!**</td>
+      <td>Not tracked in the supplier's WIP sheet</td>
+    </tr>
+  </tbody>
+</table>
+
+Under each node you'll see its plan date, actual date, and delay.
+
+### Update a milestone
+
+Hover over a step and click the pencil icon to edit it.
+
+<Frame caption="Editing a milestone.">
+  ![Edit dialog for PP SAMPLE SENT with Plan date, Actual date, Notes, and Status set to Auto (from dates), with the hint Currently Delayed, worked out from the dates](/images/wip/order-detail-step-edit.png)
+</Frame>
+
+The fields you see depend on the switches set for that step in its [milestone profile](/milestones#create-a-profile):
+
+<table>
+  <colgroup>
+    <col width="143" />
+    <col width="526" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>What to enter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Plan date**</td>
+      <td>The committed date</td>
+    </tr>
+    <tr>
+      <td>**Actual date**</td>
+      <td>When it actually happened</td>
+    </tr>
+    <tr>
+      <td>**Approval status**</td>
+      <td>Such as "approved" or "pending"</td>
+    </tr>
+    <tr>
+      <td>**Notes**</td>
+      <td>A remark, such as the supplier's explanation for a delay</td>
+    </tr>
+    <tr>
+      <td>**Status**</td>
+      <td>Leave it on **Auto (from dates)** to let the dates decide, or override it</td>
+    </tr>
+  </tbody>
+</table>
+
+Click **Save**. The order's health and risk are checked again straight away.
+
+<Note>
+  How **Status** works:
+
+  - On **Auto (from dates)**, a step with an actual date is **Completed**, and a step past its plan date without one is **Delayed**.
+  - Setting an **Actual date** always makes the step **Completed**, whatever you choose in Status.
+  - **In progress** or **Pending** past the plan date still shows as **Delayed**.
+  - Choose **Skipped / not required** for a step that doesn't apply to this order. Skipped steps don't count as late.
+</Note>
+
+### Step history
+
+Click a node to see its history: who changed it, when, and what changed. For example, "Excel import · state pending → completed · actual 2026-08-18". Click **Close** to hide it.
+
+<Frame caption="The history of one step, updated by an Excel import.">
+  ![Step history panel for FABRIC ORDER PLACED showing an Excel import entry that changed the state from pending to completed with an actual date](/images/wip/order-detail-step-history.png)
+</Frame>
+
+## Basic info tab
+
+Everything else about the order, in three sections:
+
+- **Order header**: every order field, including your [custom fields](/order-fields).
+- **Supplier & factory**: the linked supplier, its contact, the owner, and the customer. Click **View supplier** to open the supplier's profile.
+- **Line items**: each style with its item name, material, quantity, and price.
+
+<Frame caption="The Basic info tab.">
+  ![Basic info tab with the Order header field grid, the Supplier and factory card, and a Line items table](/images/wip/order-detail-basic-info.png)
+</Frame>
+
+## Files tab
+
+**Source files** lists the PO or WIP sheet files this order was created or updated from. Click the download icon to get a copy. **Attachments** lists files added to the order.
+
+## Updates tab
+
+Shows the [WIP tracker](/wip-tracker) this order belongs to. Click **Open tracker** to go to it. If the order isn't in an active tracker, click **Create WIP tracker** to start one with this order. Earlier trackers are listed under **Past trackers**.
+
+## Emails
+
+Click **Email supplier** to see the email thread of this order's WIP tracker, where you can write to the supplier and read their replies. If the order isn't in a tracker yet, you'll be asked to add it to one first.
+
+## Activity
+
+Click the clock icon to open **Activity**. It lists everything that's happened to the order, newest first:
+
+- **Order created** and **Order updated**, with who did it and which fields changed.
+- **Milestone update**, with where it came from (such as an upload, a tracker email, or the Inbox), the file name, and each change.
+- **Risk analysed**, with the tags that matched and the late steps.
+
+<Frame caption="The Activity sidebar.">
+  ![Activity sidebar listing Risk analysed, Milestone update from an uploaded WIP file with each step change, Order updated, and Order created](/images/wip/order-detail-activity.png)
+</Frame>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="WIP tracker" icon="paper-plane" href="/wip-tracker">
+    Ask the supplier for an update on this order.
+  </Card>
+
+  <Card title="Manage orders with the AI agent" icon="sparkles" href="/orders-ai-agent">
+    Ask questions and make changes in plain language.
+  </Card>
+</Columns>

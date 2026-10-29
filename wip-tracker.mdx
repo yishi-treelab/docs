@@ -1,0 +1,225 @@
+---
+title: "WIP tracker"
+description: "Batch one supplier's orders, send them a WIP sheet to fill in, and have their reply update your milestones automatically."
+icon: "paper-plane"
+---
+
+A **WIP tracker** groups the orders you follow up on with one supplier. From a tracker you generate a WIP sheet for those orders, email it to the supplier, and read their reply. When the supplier attaches the filled-in sheet to their reply, SourceReady updates the milestones for you.
+
+Open trackers from **Order → WIP tracker** in the left sidebar.
+
+<Note>
+  A tracker is for **one supplier**, and an order can be in only **one active tracker** at a time. When you pick orders, the tracker locks to the supplier of the first one, and orders already in another active tracker aren't offered.
+</Note>
+
+## The tracker list
+
+<Frame caption="The WIP tracker list, with one tracker expanded to show its orders.">
+  ![WIP tracker list with columns for WIP name, Supplier, Owner, Status, Linked Orders, and At risk / delayed, and the WIP Demo tracker expanded to show its three linked POs with health and milestones](/images/wip/tracker-list.png)
+</Frame>
+
+Each row shows the tracker's supplier, owner, status, how many orders it links, and how many are at risk or delayed. Click the arrow on a row to see its orders, or click the name to open it.
+
+<table>
+  <colgroup>
+    <col width="147" />
+    <col width="484" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Draft**</td>
+      <td>Saved but not submitted yet. Open it and click **Submit tracker**</td>
+    </tr>
+    <tr>
+      <td>**In progress**</td>
+      <td>Active, and no order is at risk</td>
+    </tr>
+    <tr>
+      <td>**Delayed / At risk**</td>
+      <td>At least one order needs attention</td>
+    </tr>
+  </tbody>
+</table>
+
+## Create a tracker
+
+There are four ways to start a tracker or add orders to one:
+
+<table>
+  <colgroup>
+    <col width="196" />
+    <col width="496" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>How</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**WIP tracker** list</td>
+      <td>Click **New WIP tracker** and pick orders</td>
+    </tr>
+    <tr>
+      <td>**Orders** list</td>
+      <td>Select orders, click **Add to WIP tracker**, then pick a tracker or click **New WIP tracker with these POs**. See [Bulk actions](/orders#add-to-a-wip-tracker)</td>
+    </tr>
+    <tr>
+      <td>An order's **Updates** tab</td>
+      <td>Click **Create WIP tracker**. See [Order details](/order-details#updates-tab)</td>
+    </tr>
+    <tr>
+      <td>A tracker's **Orders** tab</td>
+      <td>Click **Add PO** to add more orders</td>
+    </tr>
+  </tbody>
+</table>
+
+To create one from the tracker list:
+
+<Steps>
+  <Step title="Click New WIP tracker">
+    Go to **Order → WIP tracker** and click **New WIP tracker**.
+  </Step>
+  <Step title="Name it">
+    Type a **WIP name**, such as "Dongyang Fall 2026", and choose an **Owner**.
+  </Step>
+  <Step title="Pick the orders">
+    Search or **Filter** the list, then check the orders to include. The list only shows orders that aren't in another active tracker. After your first pick, the tracker is locked to that order's supplier, shown as **Supplier locked**.
+
+    <Frame caption="Picking orders for a new tracker.">
+      ![Order picker on the New WIP tracker page with a search box, Filter, and the hint POs not already in another active WIP tracker. Same supplier only when selecting.](/images/wip/tracker-new.png)
+    </Frame>
+  </Step>
+  <Step title="Submit">
+    Click **Submit**. You can also click **Save as draft** and submit later.
+  </Step>
+</Steps>
+
+## Inside a tracker
+
+<Frame caption="A tracker's Overview tab.">
+  ![WIP tracker page for WIP Demo with Email supplier, Generate WIP sheet, and Edit buttons, the Overview tab showing Linked POs, a Watch list of overdue orders, and cards for Linked POs, At risk / delayed, Completed POs, Supplier, Owner, and Status](/images/wip/tracker-overview.png)
+</Frame>
+
+<table>
+  <colgroup>
+    <col width="100" />
+    <col width="601" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Tab</th>
+      <th>What's in it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Overview**</td>
+      <td>The linked orders with their current step and ship date, a **Watch list** of orders that need the supplier's confirmation, and counts of linked, at-risk, and completed orders</td>
+    </tr>
+    <tr>
+      <td>**Orders**</td>
+      <td>The tracker's orders in the same table as the [Orders list](/orders). Click **Add PO** to add more. Select orders and click **Remove from WIP tracker** to take them out, so they can join another tracker</td>
+    </tr>
+    <tr>
+      <td>**Emails**</td>
+      <td>The email thread with the supplier, including their replies and returned sheets</td>
+    </tr>
+  </tbody>
+</table>
+
+Click **Edit** to change the tracker's name or owner. The supplier can't be changed. Delete a tracker from the **···** menu.
+
+## Generate a WIP sheet
+
+Click **Generate WIP sheet** to download a spreadsheet filled with the tracker's orders, ready for the supplier to complete.
+
+<Frame caption="Choosing the columns of the WIP sheet.">
+  ![WIP sheet dialog for the Apparel profile with Order columns set to Item name, Customer, Quantity, and Ex-factory date, Plan date and Actual date switches turned on, Notes off, and a preview of three rows](/images/wip/tracker-generate-sheet.png)
+</Frame>
+
+- **Order columns**: choose extra order details to include, such as item name, customer, quantity, or ex-factory date. **PO #** and **Style #** are always included, so the returned sheet can be matched to your orders.
+- **On each milestone**: turn **Plan date**, **Actual date**, and **Notes** on or off. Each milestone in the order's [profile](/milestones) becomes a group of columns.
+- Check the **Preview**, then click **Download .xlsx**.
+
+You don't need to download it to email it. **Email supplier** attaches the sheet for you.
+
+## Email the supplier
+
+<Steps>
+  <Step title="Open the email">
+    Click **Email supplier**. The **Send WIP email** dialog opens with the tracker's orders, the supplier's contacts, a ready-made message, and the WIP sheet attached.
+
+    <Frame caption="The Send WIP email dialog, with the WIP sheet attached.">
+      ![Send WIP email dialog with Selected POs and Selected supplier on the left, the email editor with To, Cc, Subject, and a message asking the supplier to fill in the attached WIP sheet, a preview on the right, and the attached Apparel WIP xlsx file](/images/wip/tracker-send-email.png)
+    </Frame>
+  </Step>
+  <Step title="Check the recipients">
+    The supplier's contacts are filled in under **To**. Click **Edit contacts** to add or change contacts, and choose for each one whether it **Receive emails** or gets **Auto CC**. Add anyone else under **Cc**.
+  </Step>
+  <Step title="Check the message">
+    Edit the subject and message as you like, or click **Improve with AI**. Click **Field configure** to choose which order details appear in the email, and in what order. **Style #** and item name are always shown. The **Email preview** on the right shows what the supplier will see.
+  </Step>
+  <Step title="Send">
+    Click **Send now**. The email appears in the tracker's **Emails** tab, and on the **Emails** panel of each order in it.
+  </Step>
+</Steps>
+
+<Tip>
+  The default message asks the supplier to "fill in the latest plan / actual dates and return it on this thread". Keep that line: a sheet returned **on this thread** is what gets applied automatically.
+</Tip>
+
+## When the supplier replies
+
+When the supplier replies on the tracker's thread with the filled-in sheet attached, SourceReady reads the sheet and updates the milestones straight away. There's no review step.
+
+Under the reply in the **Emails** tab, a card shows what happened:
+
+<table>
+  <colgroup>
+    <col width="176" />
+    <col width="522" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Parsing WIP sheet…**</td>
+      <td>AI is reading the sheet</td>
+    </tr>
+    <tr>
+      <td>**AI update history**</td>
+      <td>The sheet was applied. Each line shows an order, a milestone, and what changed, such as `NSO-261001-FL03 · PP sample sent: actualDate → 2026-09-29`. Rows that didn't match an order are listed too</td>
+    </tr>
+    <tr>
+      <td>**Parse failed**</td>
+      <td>The sheet couldn't be read. The card shows why</td>
+    </tr>
+  </tbody>
+</table>
+
+Each updated order's health and risk are checked again, and its [Activity](/order-details#activity) shows the milestone update.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Orders" icon="table-list" href="/orders">
+    See how the supplier's update changed each order's health.
+  </Card>
+
+  <Card title="Milestones" icon="list-check" href="/milestones">
+    Change which steps and dates the WIP sheet asks for.
+  </Card>
+</Columns>

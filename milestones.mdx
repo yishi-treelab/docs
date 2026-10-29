@@ -1,0 +1,135 @@
+---
+title: "Milestones"
+description: "Define the production steps every order passes through, and the lead times that fill in plan dates automatically."
+icon: "list-check"
+---
+
+A **milestone profile** is the list of production steps an order moves through, from fabric order to ex-factory. Each order uses one profile. SourceReady compares each step's plan date with its actual date to work out whether the order is on time.
+
+You'll set up profiles under **Settings → Order → Milestones**.
+
+<Frame caption="The Steps tab of a milestone profile.">
+  ![Milestones settings with the Apparel profile selected and a list of steps, each with Plan, Actual, Approval, and Notes switches](/images/wip/milestones-steps.png)
+</Frame>
+
+## Create a profile
+
+<Steps>
+  <Step title="Add a profile">
+    Click **Add profile**, then type a **Profile name**, such as "Apparel" or "Home textiles".
+  </Step>
+  <Step title="Add your steps">
+    Click **Add step** for each production gate, and type its name. Drag the handle on the left of a row to reorder steps. The order here is the order you'll see on every order's milestone bar.
+  </Step>
+  <Step title="Choose what each step tracks">
+    Turn on the switches for the information you want to collect on each step:
+
+    <table>
+      <colgroup>
+        <col width="100" />
+        <col width="502" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Switch</th>
+          <th>What it tracks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Plan**</td>
+          <td>The date the step is committed to</td>
+        </tr>
+        <tr>
+          <td>**Actual**</td>
+          <td>The date it actually happened</td>
+        </tr>
+        <tr>
+          <td>**Approval**</td>
+          <td>Approval wording from the supplier, such as "approved" or "pending"</td>
+        </tr>
+        <tr>
+          <td>**Notes**</td>
+          <td>A free-text remark, such as "waiting on mill"</td>
+        </tr>
+      </tbody>
+    </table>
+
+    Plan and Actual are what SourceReady uses to spot delays, so keep both on for any step you want to track.
+  </Step>
+  <Step title="Save">
+    Click **Create profile** (or **Save profile** when you edit an existing one).
+  </Step>
+</Steps>
+
+### Step ids
+
+Each step has an id under its name, such as `bulk_fabric_approved`. SourceReady uses it to match supplier WIP sheets and risk rules to the right step. Click the pencil next to the id to change it **before the first save**. After you save, the id is locked so existing orders and sheets keep matching.
+
+<Tip>
+  You can rename a step at any time. Only the id is locked.
+</Tip>
+
+### The default profile
+
+Check **Default profile** on the profile most of your orders use. Only one profile can be the default. When an order is added without a profile, SourceReady uses the default.
+
+## Set lead times
+
+Lead times fill in each step's plan date for you. Each step gets an offset in days from a **base date**, such as the ex-factory date. When an order is created or uploaded, SourceReady adds the offsets to that order's base date.
+
+<Frame caption="A lead time set based on the ex-factory date. The preview column shows the dates it would produce.">
+  ![Lead times tab with Base date set to Ex-factory date, a preview date, and a Default set of day offsets such as -60 for Fabric order placed and 0 for Ex-factory](/images/wip/milestones-lead-times.png)
+</Frame>
+
+<Steps>
+  <Step title="Open the Lead times tab">
+    In the profile, click **Lead times**. If the profile has none yet, click **Add lead times**.
+  </Step>
+  <Step title="Pick the base date">
+    Choose the order date that everything counts from in **Base date**. Most teams use **Ex-factory date**.
+  </Step>
+  <Step title="Enter offsets">
+    Type the number of days for each step. Use a negative number for steps before the base date. For example, `-60` means 60 days before ex-factory. Leave a step blank if you'd rather enter its plan date by hand.
+  </Step>
+  <Step title="Check the preview">
+    Pick a date in **Preview with base date**. The grey date next to each offset shows the plan date it would produce.
+  </Step>
+  <Step title="Save">
+    Click **Save profile**.
+  </Step>
+</Steps>
+
+### Multiple lead time sets
+
+Some orders need different timing, for example a rush program or a different factory. Click **Add set** to add another column of offsets, and give it a name. The first set is the **default**. You choose which set to use when you [upload POs](/upload-po).
+
+<Note>
+  Steps with the **Plan** switch turned off show "plan date column is off" and can't have an offset. Removing the last set turns lead times off for the profile.
+</Note>
+
+## Preview the WIP sheet
+
+Click **Preview WIP sheet** at the bottom of the profile to see the spreadsheet suppliers will fill in for this profile. Each step becomes a group of columns (plan date, actual date, and notes if you turn them on). **PO #** and **Style #** are always included so a returned sheet finds its order.
+
+<Frame caption="The WIP sheet preview for the Apparel profile.">
+  ![WIP sheet preview dialog with order columns, plan and actual date switches, and a preview table with one column group per milestone](/images/wip/preview-wip-sheet.png)
+</Frame>
+
+Choose extra **Order columns** (such as item name, customer, or quantity), then click **Download .xlsx** to get a blank template. To send a sheet filled with real orders, use [Generate WIP sheet](/wip-tracker#generate-a-wip-sheet) on a WIP tracker.
+
+## Delete a profile
+
+Click **Delete profile** at the bottom of the editor. You can't delete a profile that orders are still using. Apply a different profile to those orders first, from the [Orders list](/orders#bulk-actions).
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Risk definition" icon="triangle-exclamation" href="/risk-definition">
+    Decide when an order counts as at risk.
+  </Card>
+
+  <Card title="Upload POs" icon="file-arrow-up" href="/upload-po">
+    Add orders using this profile.
+  </Card>
+</Columns>

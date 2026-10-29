@@ -1,0 +1,80 @@
+---
+title: "Import AI instructions"
+description: "Save the reading hints AI should use on every PO and WIP sheet import, so you don't have to type them each time."
+icon: "wand-magic-sparkles"
+---
+
+You'll save instructions that AI reads every time it imports a buyer PO or a supplier WIP sheet. Use them for things that are true of most of your files, such as which column holds the PO number or which sheet to skip.
+
+You'll find them under **Settings → Order → Import**. The Import PO and Import WIP pages also link here from **Order settings › Import**, under their **AI instructions** box.
+
+<Frame caption="The Import tab, with instructions for WIP sheets and for PO documents.">
+  ![Order settings Import tab with a WIP Excel box saying the order line key is Style plus Color and to skip the LISTS sheet, a PO documents box saying the PO number is in the Ref column, and a Save button](/images/wip/settings-import.png)
+</Frame>
+
+## Save your instructions
+
+<Steps>
+  <Step title="Open the Import tab">
+    Go to **Settings → Order** and click **Import**.
+  </Step>
+  <Step title="Write your instructions">
+    Fill in either box, or both. Each can hold up to 4,000 characters.
+
+    | Box | What it's for |
+    | --- | --- |
+    | **WIP Excel** | Supplier WIP spreadsheets |
+    | **PO documents** | Buyer POs, in PDF or Excel |
+  </Step>
+  <Step title="Save">
+    Click **Save**. You'll see **Import instructions saved**.
+  </Step>
+</Steps>
+
+## Where they're used
+
+| Import | Uses |
+| --- | --- |
+| [Upload POs](/upload-po), including **Reprocess** | **PO documents** |
+| [Upload a WIP sheet](/upload-wip-sheet), including **Reprocess** | **WIP Excel** |
+| A WIP sheet attached to an email in your [Inbox](/receive-via-inbox) | **WIP Excel** |
+| A sheet the supplier returns on a [WIP tracker](/wip-tracker#when-the-supplier-replies) thread | **WIP Excel**, when the sheet is in the supplier's own layout |
+
+<Note>
+  A sheet that SourceReady generated, returned with its columns unchanged, is read directly without AI, so instructions don't apply to it. Instructions also don't apply to updates written in the body of an Inbox email. To guide those, use the notes on the **Order update** category in [Inbox](/inbox#categories).
+</Note>
+
+## How they combine with a single import's instructions
+
+The Import PO and Import WIP pages still have their own **AI instructions** box, for hints that only apply to that file. AI reads your saved instructions first, then the ones typed on the import. Where they disagree, the ones typed on the import win.
+
+For example, if your saved instructions say "Skip the LISTS sheet" and one file's instructions say "Read every sheet", AI reads every sheet of that file.
+
+## When changes take effect
+
+Saved instructions are read fresh each time AI reads a file. A change applies to the next upload, the next Inbox email, and the next time you click **Reprocess**. Imports that were already read don't change until you reprocess them.
+
+## Writing good instructions
+
+Be specific about your files. Some examples:
+
+- "One row per style and color: the order line key is Style + Color. Skip the LISTS sheet."
+- "Dates in the Remarks column are actual dates unless they say 'plan'."
+- "The PO number is in the 'Ref' column; ignore the packing list page."
+- "Use the Ex-factory Date on the header for every line."
+
+<Tip>
+  If you keep typing the same hint on single imports, move it here. If a hint only applies to one supplier, say so, for example "For Dongyang Lejing sheets, 'Cut' means Start cut."
+</Tip>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Upload POs" icon="file-arrow-up" href="/upload-po">
+    Turn buyer POs into tracked orders.
+  </Card>
+
+  <Card title="Upload a WIP sheet" icon="file-excel" href="/upload-wip-sheet">
+    Update milestones from a supplier's spreadsheet.
+  </Card>
+</Columns>

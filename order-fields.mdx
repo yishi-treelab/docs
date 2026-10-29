@@ -1,0 +1,124 @@
+---
+title: "Order fields"
+description: "See the fields every order has, and add your own custom fields."
+icon: "table-columns"
+---
+
+Every order comes with a set of standard fields, such as PO #, Ex-factory date, and Style #. If your team tracks something else, such as a QC result or a fabric mill, add it as a **custom field**.
+
+You'll manage fields under **Settings → Order → Order fields**.
+
+<Frame caption="Adding a Select custom field to orders.">
+  ![Order fields settings with the Order tab selected, an empty Custom list, a collapsed System list of 29 fields, and a New custom field form for QC inspection result with Select type and four options](/images/wip/order-fields.png)
+</Frame>
+
+## Order fields and line fields
+
+An order has two levels. Use the switch at the top to choose which one you're editing.
+
+| Level | What it holds | Example |
+| --- | --- | --- |
+| **Order** | Header fields on the order itself, one value per order | PO #, Customer, Ex-factory date |
+| **Line** | Fields on each style or SKU line in the order | Style #, Quantity, Unit price |
+
+## Add a custom field
+
+<Steps>
+  <Step title="Choose the level">
+    Click **Order** or **Line**.
+  </Step>
+  <Step title="Click Add">
+    Click **Add** next to **Custom**.
+  </Step>
+  <Step title="Name it and pick a type">
+    Type a **Label**, then choose a **Type**:
+
+    | Type | Use it for |
+    | --- | --- |
+    | **Text** | A short value, such as a mill name |
+    | **Long text** | A longer remark |
+    | **Number** | A quantity, price, or count |
+    | **Yes / no** | A checkbox, such as "Lab test required" |
+    | **Date** | Any extra date, such as a booking date |
+    | **Select** | One choice from a fixed list |
+    | **Attachment** | Files, such as a test report |
+
+    For **Select**, type the choices in **Options**, separated by commas: `Pending, Passed, Failed`.
+  </Step>
+  <Step title="Save">
+    Check **Required** if every order must have a value, then click **Add field**.
+  </Step>
+</Steps>
+
+SourceReady creates the field's **key** from its label, starting with `cus_`, such as `cus_qc_inspection_result`. You can change the label later, but the key stays the same after you save.
+
+## Where custom fields appear
+
+Once you add a field, it shows up on:
+
+- The [New order](/create-order) form and the order's **Basic info** tab.
+- [PO uploads](/upload-po), where SourceReady fills it in when the PO has a matching column.
+- Generated [WIP sheets](/wip-tracker#generate-a-wip-sheet), so suppliers can fill it in.
+- [Risk rules](/risk-definition#rule-based-tags), using **Custom field (enter path)** and the field's key.
+
+## Edit or delete a custom field
+
+Click a field in the **Custom** list to edit it, then click **Save field**. To remove it, click **Delete**. Values already saved on orders are kept but hidden.
+
+## System fields
+
+Click **System** to see the standard fields. You can't change or delete them.
+
+<Tabs>
+  <Tab title="Order">
+    | Field | Notes |
+    | --- | --- |
+    | **PO #** | Your buyer or internal PO number. Used with Style # to match uploads and WIP sheets to orders |
+    | **Customer PO #** | The customer's own PO number, if different |
+    | **Grouped PO #s** | Related PO numbers grouped under this order |
+    | **Supplier order #** | The supplier's reference |
+    | **Customer** | Buyer or brand |
+    | **Program**, **Season**, **Order type**, **Category** | How you group orders |
+    | **Vendor** | The supplier, linked to your [supplier list](/supplier-list) |
+    | **Supplier** | The supplier name as written on the PO, kept even if it doesn't match a saved supplier |
+    | **Factory contact** | Free-text contact at the factory |
+    | **Owner** | The person on your team responsible for the order |
+    | **Order date** | When the PO was placed |
+    | **Ex-factory date**, **Revised ex-factory date** | When goods leave the factory |
+    | **Customer ship date**, **Revised customer ship date** | When goods ship to your customer |
+    | **Material in-house date** | When fabric or material arrives at the factory |
+    | **ETD**, **ETA to port** | Shipping departure and arrival |
+    | **Order total** | Total value |
+    | **FOB / incoterm**, **Warehouse**, **Country of origin**, **Shipping method** | Shipping terms |
+    | **Order status** | Draft, In progress, Completed, or Cancelled. Set by actions, not edited directly |
+    | **Comments** | Free-text notes |
+    | **Attachments** | Order files |
+  </Tab>
+  <Tab title="Line">
+    | Field | Notes |
+    | --- | --- |
+    | **Style #** | Required. The style or SKU number |
+    | **Item name** | Product description |
+    | **Material** | Fabric or material composition |
+    | **Product** | Optional link to a product in your workspace |
+    | **Quantity** | Required |
+    | **Quantity unit** | Such as pcs or sets |
+    | **Unit price**, **Line amount** | Pricing |
+  </Tab>
+</Tabs>
+
+<Note>
+  Milestone dates aren't order fields. They come from the order's [milestone profile](/milestones).
+</Note>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Upload POs" icon="file-arrow-up" href="/upload-po">
+    Add orders from your buyer PO files.
+  </Card>
+
+  <Card title="Create an order" icon="plus" href="/create-order">
+    Add a single order by hand.
+  </Card>
+</Columns>

@@ -1,0 +1,80 @@
+---
+title: "Follow-up rules"
+description: "Let AI chase suppliers who go quiet and answer their questions, within rules you set."
+icon: "clock-rotate-left"
+---
+
+Getting a full quote often takes several emails. SourceReady's AI can handle that back-and-forth for you:
+
+<Columns cols={2}>
+  <Card title="AI follow up" icon="clock-rotate-left">
+    Sends a reminder when a supplier hasn't replied for a while.
+  </Card>
+
+  <Card title="AI auto reply" icon="reply">
+    Answers supplier questions and asks for missing details when a supplier does reply.
+  </Card>
+</Columns>
+
+Both use your [knowledge base](/knowledge-base) and the inquiry's details, so their replies are accurate and match your brand.
+
+## Where to set them
+
+Each inquiry has its own rules. Set them in **Advance settings**:
+
+- **While sending**: in the **Send inquiry** window, use the **AI follow up** and **AI auto reply** toggles, or click **Rules & bases** for the full settings.
+- **After sending**: on the inquiry's **Overview**, find the **Advance settings** card.
+
+<Frame caption="Advance settings for an inquiry.">
+  ![Advance settings panel with Auto cc, AI follow up rules, custom prompt, and AI auto reply options](/images/follow-up-rules.png)
+</Frame>
+
+## AI follow up
+
+AI follow up is **on by default** for new inquiries.
+
+### When to send
+
+**Send the message when the supplier hasn't replied for over** a set time, in **Hour(s)** or **Day(s)**. The default is 24 hours.
+
+### When to stop
+
+**Keep sending it until** any of the checked conditions is met:
+
+| Condition | Default |
+| --- | --- |
+| **Reaching** _N_ **day(s) after** the **Order due date** or **Created date**. Use 0 for the same day | Off |
+| **They've received the message for** _N_ **times** | On, 3 times |
+| **Required questions are answered**, **All questions are answered**, or **The supplier is connected** (their status is **Connected**) | On, required questions |
+
+<Tip>
+  Mark your must-have questions as **Required** in [Preset questions](/create-and-send-an-inquiry#preset-questions). The AI then stops chasing a supplier as soon as it has the answers you actually need.
+</Tip>
+
+## AI auto reply
+
+AI auto reply is **off by default**. When it's on, the AI answers supplier replies for you, such as questions about your specs, quantities, or shipping. It also asks for any answers that are still missing.
+
+**Keep replying to suppliers until**:
+
+- **All questions are answered** (default), or
+- **Required questions are answered**
+
+**Keep replying to suppliers**:
+
+- **Any time** (default), or
+- **Until reaching** _N_ **day(s) after** the **Order due date** or **Created date**
+
+When auto reply is active, the inquiry shows **AI is auto replying**.
+
+## Custom prompt
+
+Both AI follow up and AI auto reply have an optional **Custom prompt**. Use it to control how the AI writes, for example:
+
+```text
+Write every email in both English and Chinese. Keep follow-ups under 80 words and always mention our order due date.
+```
+
+## Auto cc
+
+Add email addresses under **Auto cc** to copy them on every email sent to suppliers in this inquiry. This is useful for keeping a manager or a shared sourcing inbox in the loop.

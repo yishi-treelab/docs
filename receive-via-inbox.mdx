@@ -1,0 +1,70 @@
+---
+title: "Receive via inbox"
+description: "Review a supplier's update that arrived by email, check it against the email, and apply it to your orders."
+icon: "envelope-open-text"
+---
+
+When a supplier emails a progress update to your connected mailbox, SourceReady reads it and proposes changes to the matching orders. You'll check those changes in the **Inbox** and apply them.
+
+This works for updates written in the email body and for WIP sheets attached to the email.
+
+<Note>
+  You need to connect a mailbox first. See [Inbox](/inbox#connect-a-mailbox).
+</Note>
+
+## Review an update
+
+<Steps>
+  <Step title="Open the Inbox">
+    Go to **Order → Inbox** and click **Needs Review**. Each item shows the subject, sender, category, and a summary such as "19 changes across 3 orders". The icon tells you where the changes came from: an Excel attachment or the email body.
+  </Step>
+  <Step title="Open an item">
+    Click an item to open it on the right. You'll see the subject, sender, when it arrived, its category (such as **Order update**), and a **Review changes** table with one row per order.
+
+    <Frame caption="An Inbox item with proposed changes to three orders.">
+      ![Inbox page with the All and Needs Review tabs, an item titled This week WIP marked Needs Review, and its review pane showing 19 changes across 3 orders in a Review changes table and a Show email link](/images/wip/inbox-list.png)
+    </Frame>
+  </Step>
+  <Step title="Check the changes">
+    The review works exactly like a manual upload. Uncheck an order to skip it, expand an order to **Skip** or **Edit** single changes, and use **Link to order** for orders SourceReady couldn't match. See [Review the changes](/upload-wip-sheet#review-the-changes) for the details.
+
+    Each change also shows a confidence score: how sure AI is that it read the value correctly. Check low scores against the email.
+  </Step>
+  <Step title="Check the email">
+    Click **Show email** to read the email thread behind the update, including its attachments. To check one change, click the quote next to it. The email opens with that quote pinned on top, so you can compare what AI read with what the supplier wrote.
+  </Step>
+  <Step title="Apply or dismiss">
+    - Click **Apply** to write the changes you kept. The item moves to **Applied**, and the next item waiting for review opens.
+    - Click **Dismiss** if the email shouldn't change anything. Nothing is written.
+  </Step>
+</Steps>
+
+## Where the result shows up
+
+After you click **Apply**:
+
+- Each order's milestones, health, and risk update straight away.
+- The order's [Activity](/order-details#activity) shows a milestone update marked **from inbox · _subject_**. Click it to jump back to the Inbox item.
+- The step's [history](/order-details#step-history) shows the change.
+
+## If something looks wrong
+
+Click **···** at the top right of the item and choose **Reprocess** to have AI read the email again. If the email had a WIP sheet attached, **View import rows** opens the rows AI read from it.
+
+<Tip>
+  If AI keeps misreading one supplier, add a hint in **Notes about these emails** on the **Order update** category, such as "Acme quotes only the last 5 digits of the PO." See [Categories](/inbox#categories).
+
+  If the problem is in an attached WIP sheet, add the hint to the **WIP Excel** box in [import instructions](/import-instructions) instead, then click **Reprocess**.
+</Tip>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Inbox" icon="inbox" href="/inbox">
+    Connect a mailbox and set up categories.
+  </Card>
+
+  <Card title="Orders" icon="table-list" href="/orders">
+    See the updated health of your orders.
+  </Card>
+</Columns>

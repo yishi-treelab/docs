@@ -1,0 +1,145 @@
+---
+title: "Inbox"
+description: "Connect a mailbox so supplier emails are sorted, read, and turned into order updates for you to review."
+icon: "inbox"
+---
+
+The **Inbox** watches a Gmail or Outlook mailbox you connect. Each incoming email is sorted into a category. Order updates are read automatically and turned into proposed changes, which wait for your review. Nothing changes on an order until someone clicks **Apply**.
+
+Open it from **Order → Inbox** in the left sidebar.
+
+## Connect a mailbox
+
+You'll do this once, under **Settings → Order → Inbox**. You can also click the gear icon on the Inbox page.
+
+<Frame caption="Inbox settings with an Outlook mailbox connected.">
+  ![Inbox settings with Enable inbox turned on, a Mailbox selected, Folder set to All incoming, Test connection and Manage connectors, and a Categories section with the built-in Order update category](/images/wip/inbox-settings.png)
+</Frame>
+
+<Steps>
+  <Step title="Connect a Gmail or Outlook account">
+    If you haven't connected one yet, click **Manage connectors** and add the account. Use a mailbox your suppliers send updates to, such as a shared `wip-updates@` address.
+  </Step>
+  <Step title="Turn on the inbox">
+    Turn on **Enable inbox**.
+  </Step>
+  <Step title="Pick the mailbox and folder">
+    Choose the account in **Mailbox**. In **Folder**, leave **All incoming**, or pick one folder if you route supplier mail there.
+  </Step>
+  <Step title="Test it">
+    Click **Test connection**. You'll see **Connected** with the address if it works.
+  </Step>
+</Steps>
+
+Until a mailbox is connected, the Inbox page shows **Set up your inbox** with a link to these settings.
+
+## Categories
+
+Every incoming email is sorted into one category.
+
+<table>
+  <colgroup>
+    <col width="190" />
+    <col width="516" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Order update** (built-in)</td>
+      <td>For a supplier reporting progress on a PO, style, milestone, ship date, or ex-factory date, in the email body or in an attached WIP sheet. SourceReady proposes changes to the matching orders for you to review</td>
+    </tr>
+    <tr>
+      <td>Your own categories</td>
+      <td>Only label the email, so you can tell at a glance what it is. They don't propose any changes</td>
+    </tr>
+  </tbody>
+</table>
+
+### Help AI read your suppliers' emails
+
+Under **Order update**, type hints in **Notes about these emails (optional)**. For example: "Acme sends WIP updates with 'WIP' in the subject and quotes only the last 5 digits of the PO. 'Ship date' means ex-factory."
+
+### Add your own category
+
+Click **Add category**, then type a **Name** (such as "QC report") and a **Description** of which emails belong in it (such as "Inspection results or QC photos from a factory or inspection agency."). You can add up to 20. Click **Save categories** when you're done.
+
+Use the switch on a category to turn it off, or click **Remove** to delete one you added.
+
+## The Inbox page
+
+The left side lists emails. Click **All** to see everything, or **Needs Review** to see only items waiting for you. Click the refresh icon to check for new mail.
+
+Each item shows its subject, sender, category, when it arrived, and a summary such as "19 changes across 3 orders". The icon next to the summary shows where the changes came from: an **Excel attachment** or the **Email body**.
+
+Click an item to review it on the right. See [Receive via inbox](/receive-via-inbox) for how to review and apply it.
+
+<Frame caption="The Inbox with one order update waiting for review.">
+  ![Inbox page with the All and Needs Review tabs, one item titled This week WIP marked Needs Review, and its review pane open on the right](/images/wip/inbox-list.png)
+</Frame>
+
+### Item states
+
+<table>
+  <colgroup>
+    <col width="156" />
+    <col width="575" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Processing**</td>
+      <td>AI is still reading the email</td>
+    </tr>
+    <tr>
+      <td>**Needs Review**</td>
+      <td>Changes are proposed and waiting for you. Also used when some orders in the email couldn't be matched</td>
+    </tr>
+    <tr>
+      <td>**Failed**</td>
+      <td>The email or its attachment couldn't be read. Try **Reprocess**</td>
+    </tr>
+    <tr>
+      <td>**Applied**</td>
+      <td>Someone clicked **Apply**, and the changes were written</td>
+    </tr>
+    <tr>
+      <td>No tag, labeled</td>
+      <td>The email went into one of your own categories. There's nothing to apply</td>
+    </tr>
+    <tr>
+      <td>No tag, dismissed</td>
+      <td>Someone clicked **Dismiss**. Nothing was written</td>
+    </tr>
+  </tbody>
+</table>
+
+**Needs Review** shows items that are **Needs Review** or **Failed**.
+
+### More actions
+
+Click **···** at the top right of an item:
+
+- **Reprocess** reads the email again, for example after you add notes to the Order update category.
+- **View import rows** opens the rows AI read from an attached WIP sheet.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Receive via inbox" icon="envelope-open-text" href="/receive-via-inbox">
+    Review and apply a supplier's update.
+  </Card>
+
+  <Card title="WIP tracker" icon="paper-plane" href="/wip-tracker">
+    Send suppliers a WIP sheet to fill in.
+  </Card>
+</Columns>

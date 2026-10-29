@@ -1,0 +1,73 @@
+---
+title: "Knowledge base"
+description: "Teach the AI your terms, standards, and preferences so it writes and answers suppliers the way you would."
+icon: "book"
+---
+
+The knowledge base holds the facts the AI needs to talk to suppliers on your behalf. It's used whenever the AI writes inquiry emails, generates questions, sends [follow-ups](/follow-up-rules), or [auto-replies](/follow-up-rules#ai-auto-reply) to suppliers.
+
+You don't need to add everything. **Your company info and the inquiry's details are included by default**: your company name, description, website, and customer base, plus the inquiry's products, quantities, target prices, due date, and shipping address.
+
+## What to add
+
+Add what suppliers ask about that isn't already in your company profile or the inquiry:
+
+<Columns cols={2}>
+  <Card title="Commercial terms" icon="handshake">
+    Payment terms, Incoterms, currency, and whether you accept trial orders.
+  </Card>
+
+  <Card title="Quality & compliance" icon="certificate">
+    Required certifications, testing standards, and audit requirements.
+  </Card>
+
+  <Card title="Packaging & labeling" icon="box">
+    Carton specs, labeling rules, and barcode requirements.
+  </Card>
+
+  <Card title="Logistics" icon="truck">
+    Preferred ports, forwarders, and shipping methods.
+  </Card>
+</Columns>
+
+Each entry has **Base content** (text) and an optional **Attachment**, such as a supplier manual, a packaging spec sheet, or a quality standard PDF.
+
+## Workspace knowledge
+
+Workspace knowledge is shared by every inquiry, so add the things that are always true for your company here.
+
+<Frame caption="Workspace knowledge bases in Settings → Inquiry.">
+  ![Knowledge Bases](/images/knowledge-bases.png "Knowledge Bases")
+</Frame>
+
+<Steps>
+  <Step title="Open Knowledge bases">
+    Go to **Settings → Inquiry → Knowledge bases**.
+  </Step>
+  <Step title="Add an entry">
+    Click **Add new**. Enter the **Base content**, and upload an **Attachment** if you have one.
+  </Step>
+  <Step title="Save">
+    Click anywhere outside the entry to save it. Click an entry to edit it, or use the trash icon to delete it.
+  </Step>
+</Steps>
+
+## Inquiry knowledge
+
+Some facts only apply to one RFQ, like a special packaging request for a single retailer or a project-specific test requirement. Add those to the inquiry itself:
+
+1. Open **Advance settings**. Click **Rules & bases** while sending, or use the **Advance settings** card on the inquiry's overview.
+2. Under **Knowledge bases**, click **Add new**.
+3. Enter the content, attach any files, and click **Save**.
+
+## Write good entries
+
+<Tip>
+  Write entries as plain, specific statements, the way you'd explain them to a supplier. Vague notes give the AI little to work with.
+</Tip>
+
+| Instead of | Write |
+| --- | --- |
+| _Standard terms_ | _We pay 30% deposit and 70% against the bill of lading copy. We don't accept letters of credit._ |
+| _Good quality_ | _All products must pass AQL 2.5 inspection. We use a third-party inspector before shipment._ |
+| _Ship fast_ | _We ship FOB Ningbo or FOB Shanghai. Our forwarder books the space._ |

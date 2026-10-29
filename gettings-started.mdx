@@ -1,0 +1,107 @@
+---
+title: "How the AI agent works"
+sidebarTitle: "How it works"
+description: "Ask in plain language. The agent picks the right skills, gathers evidence, and returns results you can act on."
+icon: "sparkles"
+---
+
+The SourceReady AI agent is a sourcing assistant that works across suppliers, products, markets, and trade data. Describe what you need the way you would brief a sourcing manager. The agent plans the work, runs the right searches, and returns structured results: supplier lists, product grids, research reports, images, or videos.
+
+![Chat Input](/images/chat-input.png "Chat Input")
+
+## What the agent can do
+
+<Columns cols={2}>
+  <Card title="Supplier search" icon="industry" href="/supplier-search">
+    Find and rank manufacturers by product, location, capability, certifications, and customers.
+  </Card>
+
+  <Card title="Global trade data" icon="ship" href="/trade-data">
+    Look up customs shipment records to see who exports what, to whom, and how much.
+  </Card>
+
+  <Card title="Product research" icon="chart-line" href="/product-research">
+    Research markets and trends across Amazon, TikTok Shop, Google Shopping, and the web.
+  </Card>
+
+  <Card title="Image search" icon="magnifying-glass" href="/image-search">
+    Upload a photo to find visually similar products and the suppliers who make them.
+  </Card>
+
+  <Card title="Image & video generation" icon="wand-magic-sparkles" href="/generation">
+    Turn a product idea into concept images, then into a short product video.
+  </Card>
+</Columns>
+
+## Skills
+
+Skills tell the agent what kind of work you want. The three most common skills sit directly on the input bar, and the rest are under **Skills**.
+
+<Frame caption="Product video and Image search live under the Skills menu.">
+  ![Skills Menu](/images/skills-menu.png "Skills Menu")
+</Frame>
+
+| Skill | Use it when you want to… |
+| --- | --- |
+| **Supplier search** | Find factories, trading companies, or wholesalers |
+| **Product research** | Understand a market, category, trend, or competitor |
+| **Product ideation** | Generate or edit product images from a concept |
+| **Product video** | Turn a product image into a short video |
+| **Image search** | Find similar products from a reference photo |
+
+<Tip>
+  You don't have to pick a skill. If you just type your request, the agent picks the skills itself and can chain several in one answer, for example researching a trend and then finding suppliers for it.
+</Tip>
+
+## Your first request
+
+<Steps>
+  <Step title="Describe what you need">
+    Be specific about the product, market, and constraints. For example:
+
+    ```text
+    Find cut-and-sew manufacturers in Vietnam for premium activewear, MOQ under 500, BSCI certified.
+    ```
+  </Step>
+  <Step title="Add context (optional)">
+    Click the paperclip to attach images or documents such as tech packs, spec sheets, or reference photos. You can also drag and drop or paste an image directly into the input.
+  </Step>
+  <Step title="Review the results">
+    The agent shows its progress as it works, then returns a result card. Click the card to open the full results in a side panel.
+  </Step>
+  <Step title="Refine with follow-ups">
+    Keep chatting to narrow results, compare options, or move on to the next step:
+
+    ```text
+    Only keep the ones that already supply US brands, and draft an inquiry to the top 5.
+    ```
+  </Step>
+</Steps>
+
+## Writing good prompts
+
+<AccordionGroup>
+  <Accordion title="Include the details that matter" icon="list-check">
+    Product type, materials, target market, price range, MOQ, certifications, and production capability all help the agent rank results. Compare _"sock suppliers"_ with _"Chinese bamboo sock manufacturers exporting to Germany, OEKO-TEX certified"_.
+  </Accordion>
+
+  <Accordion title="Name the channel when it matters" icon="store">
+    If you care about a specific marketplace, say so: _"best-selling golf polos on Amazon US"_ or _"viral K-beauty products on TikTok Shop"_.
+  </Accordion>
+
+  <Accordion title="Ask for the output you want" icon="table">
+    Ask for a comparison table, a shortlist of 10, a chart of monthly volume, or a written report, and the agent will format its answer to match.
+  </Accordion>
+
+  <Accordion title="Build on earlier results" icon="arrows-rotate">
+    Follow-ups keep the context of the chat. You can say _"the second supplier"_ or _"those products"_ without repeating yourself.
+  </Accordion>
+</AccordionGroup>
+
+## Start from a template
+
+Not sure where to start? The home screen has a gallery of templates, which are real example chats grouped by skill. Open one to see the full conversation and results. Then click **Use as sample** to reuse the prompt, or **Ask a follow-up** to keep going from where the template left off.
+
+<Note>
+  AI can make mistakes. Results include sources and evidence so you can verify important details before acting on them.
+</Note>

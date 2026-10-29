@@ -1,0 +1,149 @@
+---
+title: "Templates"
+description: "Write your RFQ email and questions once, then reuse them with variables that fill in for every supplier."
+icon: "envelope-open-text"
+---
+
+Templates save you from rewriting the same RFQ. There are two kinds:
+
+<Columns cols={2}>
+  <Card title="Email templates" icon="envelope">
+    The subject and body suppliers receive, with variables like supplier name and order due date.
+  </Card>
+
+  <Card title="Question templates" icon="list-check">
+    A reusable set of preset questions, such as unit price, lead time, and sample time.
+  </Card>
+</Columns>
+
+Manage both in **Settings → Inquiry**. You can also create them while sending an inquiry.
+
+## Email templates
+
+<Frame caption="The default email template for new suppliers.">
+  ![Email Template](/images/email-template.png "Email Template")
+</Frame>
+
+### Create an email template
+
+<Steps>
+  <Step title="Open Email templates">
+    Go to **Settings → Inquiry → Email templates** and click **Add new**.
+  </Step>
+  <Step title="Name and describe it">
+    Enter a **Title** and a **Description**. Describe when to use the template, for example _"For new furniture factories in Vietnam"_. AI uses the description to pick the best template for each supplier.
+  </Step>
+  <Step title="Choose a label">
+    Set **Label** to **For new suppliers** or **For existing suppliers**.
+  </Step>
+  <Step title="Write the subject and body">
+    Type your email and insert variables with `{}`. Use **Improve with AI** to polish it, and the paperclip icon to attach files that go with every email.
+  </Step>
+  <Step title="Save">
+    Turn on **Set as default template for me** to use it automatically for that label when you send inquiries.
+  </Step>
+</Steps>
+
+<Tip>
+  While writing an inquiry, click **Save as template** to save your current email, or **Import template** to swap in a saved one.
+</Tip>
+
+### New vs. existing suppliers
+
+Templates are grouped by label. When you send an inquiry, suppliers marked **New** get your default template for new suppliers, and suppliers marked **Existing** get your default for existing suppliers. That way a factory you've never worked with gets a full introduction, while a current partner gets a short request.
+
+### System templates
+
+SourceReady provides a default system template for each label. System templates can't be edited. To customize one, create your own template with the same label and set it as your default. To go back to the system template, open it and turn on **Set as default template for me**.
+
+<Note>
+  Defaults are personal. **Set as default template for me** only changes the default for you, not for your teammates.
+</Note>
+
+## Variables
+
+Variables are placeholders that SourceReady fills in for each supplier when the email is sent. They appear as grey chips in the editor. Click `{}` to insert one.
+
+<Frame caption="Variables are grouped by where the value comes from.">
+  ![Template Variables](/images/template-variables.png "Template Variables")
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Workspace" icon="building">
+    | Variable | Value |
+    | --- | --- |
+    | Company name | Your workspace's company name |
+    | Business description | Your company description |
+    | Employee count | Your company size |
+    | Website | Your company website |
+    | Customer base | Who your company sells to |
+  </Accordion>
+
+  <Accordion title="User" icon="user">
+    | Variable | Value |
+    | --- | --- |
+    | User name | The sender's name |
+    | User email | The sender's email address |
+  </Accordion>
+
+  <Accordion title="Supplier" icon="industry">
+    | Variable | Value |
+    | --- | --- |
+    | Supplier name | The supplier's company name |
+    | Contact name | The contact person at the supplier |
+    | Supplier product category | What the supplier makes |
+    | _Your custom fields_ | Any [supplier custom field](/supplier-custom-fields) |
+  </Accordion>
+
+  <Accordion title="Inquiry" icon="file">
+    | Variable | Value |
+    | --- | --- |
+    | Inquiry name | The inquiry's name |
+    | Order due date | When you need quotes or goods by |
+    | Shipping address | Where the goods ship to |
+    | Inquiry notes | Notes from the inquiry's Basic info |
+    | Initial questions | Preset questions marked **Add to initial questions** |
+    | Attachments | Files attached to the inquiry |
+  </Accordion>
+
+  <Accordion title="Product" icon="cube">
+    | Variable | Value |
+    | --- | --- |
+    | Product table | A table of every product in the inquiry |
+    | Product name | The product's name |
+    | Quantity | Target quantity |
+    | Target unit price | Your target price |
+    | Product description | The product's description |
+    | Product media | Product images |
+    | Tech pack | Tech pack files |
+    | _Your custom fields_ | Any [product custom field](/product-custom-fields) |
+  </Accordion>
+</AccordionGroup>
+
+### Product table
+
+The **Product table** variable inserts a table with one row per product. By default it shows product name, variants, media, tech pack, quantity, target unit price, and description. Click **Fields** above the table to show or hide columns, including your product custom fields.
+
+<Warning>
+  When an inquiry has more than one product, single-product variables like **Product name** or **Target unit price** are turned off. Use **Product table** instead, so every product appears in the email.
+</Warning>
+
+## Question templates
+
+A question template is a saved list of [preset questions](/create-and-send-an-inquiry#preset-questions) that you can load into any inquiry.
+
+<Steps>
+  <Step title="Create a template">
+    Go to **Settings → Inquiry → Question template** and click **Add new**. Give it a **Title** and **Description**.
+  </Step>
+  <Step title="Add questions">
+    For each question, enter a **Title** and an optional **Description**. Then choose who it's for with **Label**: **For all suppliers**, **For new suppliers**, or **For existing suppliers**. Turn on **Required** and **Add to initial questions** as needed.
+  </Step>
+  <Step title="Use it in an inquiry">
+    In **Preset questions**, choose **Import from question template** and pick your template. Its questions replace the current ones.
+  </Step>
+</Steps>
+
+<Tip>
+  Already have a good set of questions in an inquiry? Save them as a question template from the **Preset questions** panel.
+</Tip>

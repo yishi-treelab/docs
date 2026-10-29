@@ -1,0 +1,145 @@
+---
+title: "Search & filters"
+description: "Find exactly the suppliers you need with precise filters, AI suggestions, and ranked requirements."
+icon: "filter"
+---
+
+Use filters when you know what you're looking for: a location, a product category, a certification, or a customer the supplier already ships to. You can filter SourceReady's global database, your own workspace suppliers, or both.
+
+## Open the filter panel
+
+Click **Filter** above the supplier list, or **Apply filter** on an empty list. The **Search filter** panel opens with sections on the left and fields on the right.
+
+<Frame caption="The Search filter panel. Type a sentence into the AI filter box, or set fields by hand.">
+  ![Filter Panel](/images/filter-panel.png "Filter Panel")
+</Frame>
+
+<Steps>
+  <Step title="Describe what you need (optional)">
+    Type a sentence into the box at the top and click **AI filter**. The AI maps it onto the fields below.
+
+    ```text
+    BSCI-certified furniture manufacturers in Vietnam that supply IKEA
+    ```
+  </Step>
+  <Step title="Adjust the fields">
+    Review what the AI filled in and change anything you need. The number next to each section shows how many of its filters are active.
+  </Step>
+  <Step title="Apply">
+    Click **Apply search**. The button next to **Filter** now shows how many filters are active. Click it to edit them later.
+  </Step>
+</Steps>
+
+<Tip>
+  Many fields have a **Get suggestions** button. It suggests values based on your other filters, such as nearby sourcing countries or certifications that are common in your category.
+</Tip>
+
+## Filter sections
+
+<AccordionGroup>
+  <Accordion title="General" icon="circle-dot">
+    - **Supplier name**: search by company name.
+    - **Required contact info**: only show suppliers with an email, a phone number, or both. Use **Match any** or **Match all**.
+    - **Location**: country or region. Turn on **Exclude selection** to remove a location instead.
+    - **Key export market**: countries the supplier exports to.
+    - **Business type**: Distributor, Manufacturer, Service Company, Trading Company, Wholesaler, or Others.
+    - **Search scope**: where to search (see below).
+  </Accordion>
+
+  <Accordion title="Product" icon="cube">
+    - **Product name**: what the supplier makes, for example _yoga mat_ or _dog harness_.
+    - **Product category**: pick one or more categories from the category tree.
+  </Accordion>
+
+  <Accordion title="Customer" icon="building">
+    - **Partnered customer**: brands or companies the supplier works with, for example _Nike, Lululemon_. You can also describe a group, like _Top 10 sports companies_. Turn on exclude to hide suppliers that work with them.
+    - **Min. partnered customer count**: only show suppliers with at least this many customers.
+  </Accordion>
+
+  <Accordion title="Highlight" icon="bookmark">
+    Capability tags, grouped into:
+
+    - **Manufacturing & Capability**: OEM manufacturer, ODM manufacturer, Own brand, High capacity factory, Small batch production, Product customization
+    - **Enterprise & Brands**: Patented technology, Industry association member, High-tech enterprise, Established brand, Large enterprise group, Multinational enterprise
+    - **Sustainability & Ethics**: Eco-friendly supplier, Sustainable materials
+    - **Trading & Flexibility**: Low MOQ, Dropshipping ready, Experienced exporter, Custom packaging, Multi-country export
+    - **Quality & Reputation**: High product rating, Large export volume
+
+    Choose **Match any** to show suppliers with at least one selected highlight, or **Match all** to require every one.
+  </Accordion>
+
+  <Accordion title="Profile" icon="id-card">
+    - **Founding years**: minimum and maximum year founded.
+    - **Employee count**: from _Fewer than 5 people_ to _More than 10000 people_.
+    - **Review (out of 5)**: rating range.
+    - **Certification**: for example ISO9001, BSCI, or CE.
+    - **Source**: where the supplier is listed: Alibaba, Made in China, Global source, Thomasnet, or Europages.
+    - **Verification**: Alibaba verified, Made in China audited, Global sources verified, Thomasnet verified, or D&B registered.
+  </Accordion>
+
+  <Accordion title="Shipments" icon="ship">
+    Filter by customs records.
+
+    - **Shipment data required**: only show suppliers with trade data.
+    - **Recent activity**: suppliers that shipped within a recent period.
+    - **Weight**, **CIF**, and **Quantity**: shipment ranges.
+
+    <Note>
+      The Shipments filter is a Pro feature.
+    </Note>
+  </Accordion>
+
+  <Accordion title="Extension data" icon="pen-ruler">
+    Filter by your workspace's [custom fields](/supplier-custom-fields). Number fields use a minimum and maximum, and select fields use their options, for example **Yes** / **No**.
+
+    <Note>
+      The Extension data filter is a Pro feature.
+    </Note>
+  </Accordion>
+</AccordionGroup>
+
+<Frame caption="Highlight filters are grouped by theme.">
+  ![Filter Highlights](/images/filter-highlights.png "Filter Highlights")
+</Frame>
+
+<Frame caption="Profile filters: founding year, employee count, reviews, certifications, and source.">
+  ![Filter Profile](/images/filter-profile.png "Filter Profile")
+</Frame>
+
+<Frame caption="Extension data filters come from your workspace's custom fields.">
+  ![Filter Extension Data](/images/filter-extension-data.png "Filter Extension Data")
+</Frame>
+
+### Search scope
+
+| Option | Searches |
+| --- | --- |
+| **All** | SourceReady's global database and your workspace |
+| **Public supplier** | SourceReady's global database only |
+| **Private supplier** | Only suppliers saved in your workspace |
+
+## Find a filter quickly
+
+- Type in **Search filter** at the top left to jump to a field by name.
+- Check **Hide inactive filters** to show only the fields you've set.
+- Click **Clear all** to start over.
+
+## Filters vs. requirements
+
+Next to **Filter** is **Requirement**. They do different jobs:
+
+<Columns cols={2}>
+  <Card title="Filters" icon="filter">
+    Hard rules. Suppliers that don't match are **removed** from the results.
+  </Card>
+
+  <Card title="Requirements" icon="lightbulb">
+    Ranked preferences, like _"Has experience with premium brands"_. They **only change the order**: suppliers that meet more of your top requirements rise to the top.
+  </Card>
+</Columns>
+
+Use filters for must-haves and requirements for nice-to-haves. See [Supplier search](/supplier-search#requirements-vs-filters) for how the AI scores requirements.
+
+## Search within a list
+
+To find a supplier you've already saved, use **Search** (`⌘F`) above the list. It searches the current list without changing your filters.

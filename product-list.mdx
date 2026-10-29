@@ -1,0 +1,123 @@
+---
+title: "Product list"
+description: "Keep every product you're sourcing in one place, with specs, variants, tech packs, and linked suppliers."
+icon: "cube"
+---
+
+The product list holds the products your team is developing or sourcing. Each product keeps its specs, images, variants, tech pack, and the suppliers you're working with on it. Open it from **Products** in the sidebar.
+
+<Frame caption="The product list in table view.">
+  ![Product List](/images/product-list.png "Product List")
+</Frame>
+
+## Add a product
+
+Click **Add private product**, then choose how to start:
+
+<Columns cols={2}>
+  <Card title="Start with AI" icon="sparkles">
+    Describe your product briefly, and the AI fills in the details for you to review.
+  </Card>
+
+  <Card title="Start manually" icon="hand">
+    Enter all product information yourself.
+  </Card>
+</Columns>
+
+You can also save products from the AI agent's [product research](/product-research) and [image search](/image-search) results. Products you add are marked **Private** and are only visible to your workspace.
+
+## Organize products
+
+### Status
+
+Every product has a status. Use the segments above the table to filter by it.
+
+| Status | Meaning |
+| --- | --- |
+| **Draft** | Still being defined |
+| **Active** | Ready to source or in production |
+| **Archived** | No longer in use. Hidden from **All** but kept for reference |
+
+### Lists
+
+Like suppliers, products can be grouped into lists, such as _Sofas_ or _Jackets_. Lists appear as tabs across the top. Click **\+** to create one, or **All lists** to see them all. A product can be in more than one list.
+
+### Columns, search, and sort
+
+- Click **Fields** to show or hide columns: **Status**, **Description**, **Category**, **Related suppliers**, **Main material**, **Tech pack**, and your [custom fields](/product-custom-fields).
+- Use **Search** (`⌘F`) to find a product by name.
+- Use **Sort** to reorder the table.
+
+## Filter products
+
+Click **Filter** to narrow down the list.
+
+| Section | Filter by |
+| --- | --- |
+| **Product** | Product category, related suppliers, main material, purchase price (USD), MOQ, review, product scope, and whether the product has been added to a supplier |
+| **Supplier** | Location, key export market, certifications, business type, founding years, employee count, and verified sources of the product's suppliers |
+| **Custom fields** | Your workspace's product custom fields (Pro feature) |
+
+## Bulk actions
+
+Select products with the checkboxes to show the action bar.
+
+| Action | What it does |
+| --- | --- |
+| **Ask AI** | Opens the AI agent with the selected products as context |
+| **Send inquiry** | Starts an [inquiry](/create-and-send-an-inquiry) for the selected products. Use the arrow to **Send to existing inquiry** |
+| **Save to list** | Adds the products to a list |
+| **Add to supplier** | Links the products to a supplier in your workspace |
+| **⋯** | **Remove from list**, **Archive**, or **Delete** |
+
+## Product details
+
+Click a product to open it. The page is organized into tabs:
+
+<Frame caption="Product detail with images, variants, and tags.">
+  ![Product Detail](/images/product-detail.png "Product Detail")
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Overview" icon="circle-info">
+    - **Media**: images, videos, or 3D models. The icons on the image start an **Image search** for similar products, **Image generate**, or **Video generate**.
+    - **Variants**: options such as _Color_, _Material_, or _Base finish_, each with its own values.
+    - **Description** and **Tags**.
+    - **Production**: status, price (USD), MOQ, main material, and related suppliers.
+    - **BOM**, **Size Chart (POM)**, and **Tech pack** files.
+  </Accordion>
+
+  <Accordion title="Extension fields" icon="pen-ruler">
+    Your workspace's [custom fields](/product-custom-fields) for this product.
+  </Accordion>
+
+  <Accordion title="Inquiry" icon="paper-plane">
+    Every inquiry that includes this product, with its status, received quotes, and order due date. Click an inquiry to open it.
+
+    <Frame>
+      ![Product Inquiries](/images/product-inquiries.png "Product Inquiries")
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Checklist" icon="list-check">
+    Checklists to track product milestones, each with an approval status and an optional linked task. Only shown when tasks are enabled for your workspace.
+  </Accordion>
+</AccordionGroup>
+
+To edit a product, click the pencil icon at the top right. Use the **⋯** menu to **Duplicate**, **Add to supplier**, **Archive**, or **Delete** it.
+
+### Versions
+
+Save a snapshot of a product before making big changes. From the **⋯** menu, choose **Save as new version** and give it a name. Open **Version list** in the same menu to preview or rename earlier versions.
+
+## Next steps
+
+<Columns cols={2}>
+  <Card title="Custom fields" icon="pen-ruler" href="/product-custom-fields">
+    Track your own product attributes.
+  </Card>
+
+  <Card title="Send an inquiry" icon="paper-plane" href="/create-and-send-an-inquiry">
+    Request quotes for a product from multiple suppliers.
+  </Card>
+</Columns>

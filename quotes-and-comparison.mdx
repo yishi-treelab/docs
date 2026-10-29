@@ -1,0 +1,123 @@
+---
+title: "Quotes & comparison"
+description: "Track every supplier's reply, review AI-extracted answers, and compare quotes side by side."
+icon: "scale-balanced"
+---
+
+Once an inquiry is sent, SourceReady reads each supplier's reply and pulls their answers into a structured quote. Open any inquiry from the inquiry list to see its progress.
+
+An inquiry has three tabs:
+
+<Columns cols={3}>
+  <Card title="Overview" icon="gauge">
+    Progress at a glance.
+  </Card>
+
+  <Card title="Invitations" icon="envelope">
+    Each supplier's status and conversation.
+  </Card>
+
+  <Card title="Compare quotes" icon="scale-balanced">
+    Every quote side by side.
+  </Card>
+</Columns>
+
+Click **Add supplier** at the top right to invite more suppliers at any time.
+
+## Overview
+
+<Frame caption="The overview shows products, invited suppliers, and how far each one has got.">
+  ![Inquiry overview for Raisin Container with selected product, invited suppliers, received quotes, top quote score, and invitation counts](/images/inquiry-overview.png)
+</Frame>
+
+- **Selected product**: the products being quoted, with target price and quantity.
+- **Invited suppliers**: each supplier's status and how many questions they've answered, for example _0/5_.
+- **Received quotes** and **Top quote score**: how many quotes are in, and the best score so far.
+- **Pending invite**, **Invitation sent**, **Invitation viewed**, and **Connected**: how many suppliers are at each stage.
+- **Basic info**, **Preset questions**, and **Advance settings**: edit the inquiry's details, questions, and [follow-up rules](/follow-up-rules).
+
+Click the arrow on a card to open its details.
+
+## Invitations
+
+The **Invitations** tab lists every invited supplier and where they are in the conversation.
+
+<Frame caption="Each supplier's quotation status, follow-ups, and last contact.">
+  ![Invitations tab with Southco India marked Connected and three suppliers marked Viewed](/images/invitations.png)
+</Frame>
+
+### Quotation status
+
+| Status | Meaning |
+| --- | --- |
+| **Pending** | Not sent yet |
+| **Sent** | Email delivered |
+| **Viewed** | The supplier opened the email |
+| **Auto response** | The supplier's mailbox sent an automatic reply, such as an out-of-office message |
+| **Connected** | The supplier replied |
+| **Request failed** | The email couldn't be sent. The **Last message status** column shows why, for example **Email not connected** or **Authorization expired** |
+
+Use the segments (**All**, **Sent**, **Viewed**, **Connected**, and **More**) to filter by status.
+
+Other columns show **Follow ups** (how many AI reminders have gone out), **Last contact**, answered questions, and the AI's **Recommend value**. Click **Fields** to show more, such as contact info or the supplier's certifications and export markets.
+
+### Talk to a supplier
+
+Click **Chat** on a supplier's row to open the email conversation. You can read the whole thread and reply yourself, in addition to anything the AI sends.
+
+## Review a quote
+
+Click a supplier to open **Quotation details**.
+
+<Frame caption="Quotation details: score, product, tasks, and each answer.">
+  ![Quotation details for Southco India showing recommend value, inquiry product, tasks, and answered questions](/images/quotation-details.png)
+</Frame>
+
+- **Recommend value**: the AI's score for this quote, out of 100. Click it to see the reasoning.
+- **Inquiry product**: the product, quantity, and target unit price being quoted.
+- **Tasks**: when the AI needs something from you to keep the conversation moving, such as a decision or a missing detail, it creates a task here.
+- **Questions**: each preset question with the supplier's answer. Filter by **Pending**, **Answered**, or **Unanswered**, and click **View details** to expand an answer.
+
+<Note>
+  Each time a supplier replies and AI updates their quote answers, 5 credits are used.
+</Note>
+
+## Compare quotes
+
+The **Compare quotes** tab puts every quote in one table: one row per supplier, one column per question. Rows are sorted by **Recommend value** by default, so the strongest quotes are on top.
+
+<Frame caption="Compare unit price, lead time, and every other answer across suppliers.">
+  ![Compare quotes table with recommend value and columns for unit price and production lead time](/images/compare-quotes.png)
+</Frame>
+
+### Approve or disapprove
+
+Use the icons at the end of each row:
+
+- **✓ Approve** a quote you want to move forward with.
+- **✕ Disapprove** a quote you're ruling out.
+- Changed your mind? Use **Undo approval** or **Undo disapproval**.
+
+Filter the table with **All**, **Approved**, and **Disapproved**.
+
+### Export
+
+Click **Export** to download all quotes as an Excel file, including the AI assessment for each supplier. Share it with your team or keep it with your order records.
+
+<Note>
+  Exporting quotes is available on the Pro Plus plan.
+</Note>
+
+## Ask the AI about your quotes
+
+Use the **Ask anything** bar at the bottom of the page to ask about the inquiry in plain language:
+
+```text
+Which supplier offers the best price for a 30-day lead time?
+```
+
+```text
+Summarize the differences between the top three quotes.
+```
+
+See [Global chat](/global-chat) for more on what the in-page assistant can do.

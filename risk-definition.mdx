@@ -1,0 +1,143 @@
+---
+title: "Risk definition"
+description: "Decide when an order counts as at risk, and how that rolls up into its health."
+icon: "triangle-exclamation"
+---
+
+A **risk tag** is a rule that flags a problem on an order, such as a late milestone or a quality issue in a supplier note. Each tag has a severity, and the tags that match an order decide its **health**: the At risk, Watch, or On track label you see on the Orders list.
+
+You'll set up risk tags under **Settings → Order → Risk definition**.
+
+<Frame caption="The Risk definition tab, with the built-in overdue tag selected.">
+  ![Risk definition settings with the Overdue tag selected: label, description, tag key, High severity, Enabled switch, and a rule that matches when any step is overdue by more than 1 day](/images/wip/risk-rule-based.png)
+</Frame>
+
+## The tag every workspace starts with
+
+New workspaces come with one high-severity tag that matches when **any milestone is more than 1 day past its plan date and not completed**. It's an ordinary tag: you can change its threshold, lower its severity, turn it off, or delete it.
+
+## How tags become health
+
+Each order's health comes from the most severe tag that matches it.
+
+<table>
+  <colgroup>
+    <col width="146" />
+    <col width="511" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Health</th>
+      <th>When</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**At risk** (red)</td>
+      <td>At least one **High** tag matches</td>
+    </tr>
+    <tr>
+      <td>**Watch** (yellow)</td>
+      <td>Only **Medium** or **Low** tags match</td>
+    </tr>
+    <tr>
+      <td>**On track** (green)</td>
+      <td>No tag matches</td>
+    </tr>
+    <tr>
+      <td>**Done**</td>
+      <td>Every tracked milestone is completed or skipped, or the order is completed or cancelled</td>
+    </tr>
+  </tbody>
+</table>
+
+Health shows in the **Health** column on the [Orders list](/orders), feeds the **Needs attention** count, and is explained in the **Risk** section of each [order's detail page](/order-details#risk).
+
+## Add a tag
+
+<Steps>
+  <Step title="Click Add tag">
+    A new tag opens in the editor with a sample rule.
+  </Step>
+  <Step title="Name it">
+    Fill in **Label** (what people see on the order, such as "FRI at risk") and **Description** (why it matters). The description is shown on the order when the tag matches, so write it for the person reading the order.
+  </Step>
+  <Step title="Set the tag key and severity">
+    **Tag key** is a short id, such as `fri_at_risk`. Pick **High**, **Medium**, or **Low** in **Severity**, using the health table above.
+  </Step>
+  <Step title="Write the rule">
+    Choose **Rule-based** or **LLM** under **Rule**. Both are explained below.
+  </Step>
+  <Step title="Save">
+    Click **Create tag** (or **Save tag** when you edit one). Leave **Enabled** on for the tag to be checked.
+  </Step>
+</Steps>
+
+## Rule-based tags
+
+A rule-based tag matches when its conditions are true. Each condition reads **Where** _field_ _operator_ _value_. Click **\+ Add condition** to add another, and choose **And** or **Or** to join it to the one above.
+
+The fields you can check:
+
+| Field | What it checks |
+| --- | --- |
+| **Any step overdue (days, not completed)** | How many days late the worst open milestone is |
+| **Any step delay (days)** | How many days late any milestone is, including completed ones |
+| **Any step state** | A milestone's state, such as done or late |
+| **Any step approval status** | The approval wording on any milestone |
+| **Any step notes** | The note text on any milestone |
+| **Last step state** | The state of the final milestone |
+| **Order status** | Draft, In progress, Completed, or Cancelled |
+| Order dates | **Ex-factory date**, **Revised ex-factory date**, **Customer ship date**, **Revised customer ship date**, **Order date**, **Material in-house date**, **ETD**, **ETA port** |
+| **Order total** | The order's total value |
+| **Now** | Today's date, for comparing against an order date |
+| **Custom field (enter path)** | One of your [custom order fields](/order-fields#add-a-custom-field). Type its key, such as `cus_fabric_mill` |
+
+Dates and numbers use **Equals**, **Not equals**, **Greater than**, **Greater or equal**, **Less than**, **Less or equal**, **Is empty**, and **Is not empty**. Text fields use **Equals**, **Not equals**, **Contains**, **Is empty**, and **Is not empty**.
+
+To compare two fields, change **Value** to **Another field**. For example, "Where **Revised ex-factory date** **Greater than** **Another field** **Ex-factory date**" flags orders whose ship date has slipped.
+
+<Tip>
+  To make a softer warning before the overdue tag fires, add a **Medium** tag with **Any step overdue (days, not completed)** **Greater than** `0`. Late steps then show as Watch first, and At risk once they pass your High threshold.
+</Tip>
+
+## LLM tags
+
+An LLM tag uses a prompt instead of conditions. Use it for things a rule can't see, such as a supplier note that mentions a failed lab dip.
+
+<Frame caption="An LLM tag that flags quality or material problems mentioned in supplier notes.">
+  ![Risk tag editor in LLM mode with the label Quality or material issue, Medium severity, and a prompt describing when the tag should match](/images/wip/risk-llm.png)
+</Frame>
+
+Choose **LLM** under **Rule**, then describe in **Prompt** when the tag should match. The model reads the order's fields and current milestones and answers yes or no. Be specific about what counts, for example: "Match when any supplier note mentions a failed shade or lab dip, fabric re-dye, a rejected sample, or failed testing."
+
+## When tags are checked
+
+SourceReady checks an order's tags when:
+
+- The order is created, or added by an [upload](/upload-po).
+- You edit the order or one of its milestones.
+- A supplier update is applied from a [WIP sheet](/upload-wip-sheet), the [Inbox](/receive-via-inbox), or a [WIP tracker](/wip-tracker) reply.
+- You click **Re-run risk check** in the **Risk** section of the order, or in its **More** menu.
+
+Changes to a tag apply the next time an order is checked. To see a new or edited tag on an order straight away, open the order and click **Re-run risk check**.
+
+<Frame caption="The Risk section on an order, showing which tag matched and which milestones caused it.">
+  ![Risk section of an order showing At risk 22 days late, one risk flagged, the Overdue tag with High severity, and chips for the late milestones](/images/wip/order-detail-risk.png)
+</Frame>
+
+## Turn off or delete a tag
+
+Turn off **Enabled** to stop checking a tag but keep it for later. Click **Delete** to remove it. Either way, it stops matching the next time each order is checked.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Order fields" icon="table-columns" href="/order-fields">
+    Add the custom fields your team tracks.
+  </Card>
+
+  <Card title="Upload POs" icon="file-arrow-up" href="/upload-po">
+    Add orders and see their health.
+  </Card>
+</Columns>

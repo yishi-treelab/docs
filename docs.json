@@ -1,0 +1,166 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "SourceReady",
+  "colors": {
+    "primary": "#577EFF",
+    "light": "#7591FF",
+    "dark": "#3E60C9"
+  },
+  "favicon": {
+    "light": "/images/sr-logo.png",
+    "dark": "/images/sr-logo.png"
+  },
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "AI Agent",
+            "pages": [
+              "gettings-started",
+              "supplier-search",
+              "global-trade-data-search",
+              "product-research",
+              "image-search",
+              "image-and-video-generation",
+              "global-chat"
+            ]
+          },
+          {
+            "group": "Suppliers",
+            "pages": [
+              "supplier-list",
+              "search-and-filters",
+              "supplier-custom-fields"
+            ]
+          },
+          {
+            "group": "Products",
+            "pages": [
+              "product-list",
+              "product-custom-fields"
+            ]
+          },
+          {
+            "group": "Inquiry",
+            "pages": [
+              "inquiry-set-up-guide",
+              "create-and-send-an-inquiry",
+              "quotes-and-comparison",
+              "email-templates",
+              "follow-up-rules",
+              "knowledge-base"
+            ]
+          },
+          {
+            "group": "Production Order WIP",
+            "tag": "Enterprise",
+            "pages": [
+              "wip-set-up-guide",
+              {
+                "group": "Orders",
+                "pages": [
+                  "orders",
+                  "order-details"
+                ]
+              },
+              {
+                "group": "Add Orders",
+                "pages": [
+                  "upload-po",
+                  "create-order"
+                ]
+              },
+              {
+                "group": "Upload WIP Sheet",
+                "pages": [
+                  "upload-wip-sheet",
+                  "receive-via-inbox"
+                ]
+              },
+              "inbox",
+              "orders-ai-agent",
+              "wip-tracker",
+              {
+                "group": "Configurations",
+                "pages": [
+                  "milestones",
+                  "risk-definition",
+                  "order-fields",
+                  "import-ai-instructions"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "openapi": "https://gateway.sourceready.com/swagger/doc.json"
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/sr-logo.png",
+    "dark": "/images/sr-logo.png"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "https://www.sourceready.com/contact"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://www.sourceready.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/sourceready",
+      "github": "https://github.com/sourceready",
+      "linkedin": "https://linkedin.com/company/sourceready"
+    }
+  },
+  "background": {
+    "color": {
+      "light": "#F7F7F7",
+      "dark": "#1F1F1F"
+    }
+  },
+  "appearance": {
+    "default": "system"
+  }
+}

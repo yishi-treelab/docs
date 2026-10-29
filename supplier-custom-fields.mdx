@@ -1,0 +1,91 @@
+---
+title: "Custom fields"
+description: "Track your own supplier data, like approval status, audit results, or PO totals, with extension fields."
+icon: "pen-ruler"
+---
+
+Custom fields, called **Extension fields** in the app, let you record supplier information that's specific to your business. Examples include _Is approved yet_, _Have we visited them_, or _Total PO Purchased_. Fields are shared across your workspace, so every supplier record has the same set.
+
+<Info>
+  Extension fields are a Pro feature. Only workspace **Admins** can create, edit, reorder, or delete fields. Values are filled in on each supplier's edit form.
+</Info>
+
+<Frame caption="Extension fields on a supplier's edit form.">
+  ![Customize Field](/images/extension-fields-edit.png "Customize Field")
+</Frame>
+
+## Create a field
+
+<Steps>
+  <Step title="Open a supplier's edit form">
+    Open any supplier profile and click the edit (pencil) icon at the top right. Scroll to **Extension fields**.
+  </Step>
+  <Step title="Click Customize field">
+    A list of your workspace's existing fields appears.
+
+    <Frame>
+      ![Customize Field 1](/images/customize-field-1.png "Customize Field 1")
+    </Frame>
+  </Step>
+  <Step title="Click Add new field">
+    Enter a **Field name**, choose a **Field type**, and optionally add a **Description**. The description appears as an ⓘ tooltip next to the field name.
+  </Step>
+  <Step title="Save">
+    The field is added to every supplier in your workspace.
+  </Step>
+</Steps>
+
+## Field types
+
+<Frame caption="Eight field types are available.">
+  ![Field Types](/images/field-types.png "Field Types")
+</Frame>
+
+| Type | Use it for | Example |
+| --- | --- | --- |
+| **Text** | Short free text | _Factory contact on WeChat_ |
+| **Single select** | One choice from a list of options | _Is approved yet_: Yes / No |
+| **Multiple select** | Several choices from a list of options | _Product lines_: Chairs, Tables, Stools |
+| **Number** | Counts, amounts, and scores. Choose **None** or **Percentage** format and the number of decimal places | _Supplier Reliability Score (1-5)_ |
+| **Formula** | A number calculated from other number fields | _Average PO value_ = A / B |
+| **Attachment** | Files such as audit reports or contracts | _Latest audit report_ |
+| **Rich text** | Long, formatted notes | _Visit notes_ |
+| **Cascading select** | Nested options, where the first choice narrows the second | _Region_ → _Country_ |
+
+### Formula fields
+
+In a formula, each referenced number field gets a letter (A, B, C…). Write the formula with those letters and basic arithmetic, for example `(A + B) / (A - B) * 10`. SourceReady checks the formula as you type and flags unknown letters or invalid characters.
+
+Formula values are calculated automatically and can't be edited by hand. They appear once a supplier has been saved.
+
+## Manage fields
+
+From **Customize field** you can:
+
+- **Reorder** fields by dragging the handle on the left. The order applies to every supplier.
+- **Edit** a field's name, description, or options with the pencil icon.
+- **Delete** a field with the trash icon.
+
+<Warning>
+  Deleting a field removes its values from every supplier record. This can't be undone.
+</Warning>
+
+## Where custom fields show up
+
+<Columns cols={2}>
+  <Card title="Supplier profile" icon="id-card">
+    The **Extension fields** tab on every supplier profile.
+  </Card>
+
+  <Card title="Table view" icon="table">
+    Add fields as columns with **Fields** in the supplier list's table view.
+  </Card>
+
+  <Card title="Filters" icon="filter" href="/search-and-filters">
+    Filter your suppliers by field values in the **Extension data** section.
+  </Card>
+
+  <Card title="Email templates" icon="envelope" href="/email-templates">
+    Insert field values into inquiry emails as **Supplier** variables.
+  </Card>
+</Columns>

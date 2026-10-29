@@ -1,0 +1,100 @@
+---
+title: "Upload a WIP sheet"
+description: "Update milestones from a supplier's filled-in WIP spreadsheet. Check every proposed change, then apply."
+icon: "file-excel"
+---
+
+A **WIP sheet** is the spreadsheet a supplier fills in with progress on your orders: actual dates, revised dates, and notes for each milestone. When a filled-in sheet comes back, SourceReady reads it and proposes changes to the matching orders.
+
+## Three ways a filled-in sheet gets in
+
+| How it arrives | What happens | When to use it |
+| --- | --- | --- |
+| **You upload it** (this page) | AI reads it. You review the changes and click **Apply** | The supplier sent the sheet some other way, such as WeChat or a shared drive |
+| **The supplier replies in a WIP tracker thread** | Milestones are updated automatically, with no review step. See [WIP tracker](/wip-tracker#when-the-supplier-replies) | You sent the sheet from a WIP tracker |
+
+## Upload and extract
+
+<Steps>
+  <Step title="Open Import WIP">
+    Click **Upload WIP sheet** at the top of the [Orders list](/orders) or the WIP tracker list. You can also click **Import WIP (Excel)** on the **Imports** page.
+  </Step>
+  <Step title="Add the spreadsheet">
+    Click **Upload spreadsheet** and choose the file. You can upload Excel (`.xlsx`, `.xls`) or `.csv` files. It shows **Ready to extract**.
+
+    <Frame caption="A supplier WIP sheet ready to extract.">
+      ![Import WIP page with a Spreadsheet section listing Northshore WIP 2026-10-01.xlsx as Ready to extract](/images/wip/upload-wip-setup.png)
+    </Frame>
+  </Step>
+  <Step title="Add AI instructions (optional)">
+    Under **Instructions**, type any hints for reading this file in **AI instructions**, such as "Only read the season sheets; the order line key is Style + Color." They're added after your saved [import instructions](/import-instructions) and win where they disagree.
+  </Step>
+  <Step title="Click Extract">
+    AI reads the sheet, matches each row to an order by **PO #** and **Style #**, and works out what changed. The review page opens when it's done.
+  </Step>
+</Steps>
+
+The sheet doesn't have to be in SourceReady's format. AI can read a supplier's own layout, as long as each row has a PO number or style number it can match.
+
+## Review the changes
+
+The review page shows the file, its status (**Needs Review**), and a summary such as "8 changes across 3 orders". Below that, one row per matched order.
+
+<Frame caption="Proposed changes from a WIP sheet, one row per order.">
+  ![Review page for Northshore WIP 2026-10-01.xlsx with status Needs Review, 8 changes across 3 orders, and a table of orders with health, number of changes, and from-to values for Comments, TOP SAMPLE SENT, and START CUT](/images/wip/upload-wip-review.png)
+</Frame>
+
+Each row shows:
+
+- **PO #** and **Style**.
+- **Health**: the order's health now, and what it will be after the changes, such as **On track → At risk**.
+- **Changes**: how many changes are proposed.
+- One column per changed field or milestone, with the old and new value, such as **Sep 27 → Sep 29**.
+
+### Skip or edit a change
+
+<Frame caption="An order expanded, with all of its changes skipped.">
+  ![Review table with one order unchecked showing 0 of 3 changes, expanded to list each change crossed out with Edit and Restore buttons and an Open order link](/images/wip/upload-wip-skipped.png)
+</Frame>
+
+- **Uncheck an order** to skip every change on it.
+- **Click the arrow** next to an order to see each change on its own line. Each line shows where the value came from (the sheet's file name), and a quote of the source text when there is one.
+- Click **Skip** to leave out one change, or **Restore** to bring it back.
+- Click **Edit** to correct a value before applying it. Edited values are marked **edited**.
+- Click **Open order ↗** to go to the order's detail page.
+
+To see exactly what AI read, click **Show rows read from the file** at the bottom.
+
+### Orders that didn't match
+
+If a row's PO # or style isn't in SourceReady, it's listed under **N orders not in SourceReady**. Each one shows its PO and style, which rows it came from, and its proposed changes. If it's an order you do have, under a slightly different number, click **Link to order**, search for the right order, and pick it. Its changes then join the review.
+
+## Apply or dismiss
+
+<Frame caption="The apply bar, with three changes skipped.">
+  ![Footer with Cancel, Dismiss, a 3 skipped count, and an Apply 2 orders button](/images/wip/upload-wip-apply-bar.png)
+</Frame>
+
+The bar at the bottom counts what you skipped and edited.
+
+- Click **Apply** (such as **Apply 2 orders**) to write the changes. Each order's milestones, health, and risk update straight away, and its [Activity](/order-details#activity) shows a milestone update from the upload.
+- Click **Dismiss** to throw the import away without changing anything.
+- Click **Cancel** to leave and come back later. The import stays in [import history](/upload-po#import-history) as **Processing**.
+
+## Read the sheet again
+
+If AI misread the sheet, click **···** at the top right of the review and choose **Reprocess**. Each run of the same file is kept. When there's more than one, a run switcher appears next to the file name, so you can compare runs. The newest is marked latest.
+
+If the same fix applies to most of your suppliers' sheets, save it once in [import instructions](/import-instructions) instead.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Receive via inbox" icon="envelope-open-text" href="/receive-via-inbox">
+    Review supplier updates that arrive by email.
+  </Card>
+
+  <Card title="WIP tracker" icon="paper-plane" href="/wip-tracker">
+    Send suppliers a sheet and have replies applied for you.
+  </Card>
+</Columns>

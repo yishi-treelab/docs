@@ -1,0 +1,189 @@
+---
+title: "Manage orders with the AI agent"
+sidebarTitle: "Orders with AI agent"
+description: "Ask about your orders in plain language, get live tables and charts, and update orders and milestones from chat."
+icon: "sparkles"
+---
+
+The AI agent can read and update your production orders. Ask it which orders are late, how each supplier is doing, or why an order is at risk. You can also tell it to move a date or mark a milestone done, on one order or many.
+
+## Where to use it
+
+Open a regular agent chat: click **New chat** and type your question. Order tools are on automatically when your workspace has Production Order WIP turned on. You don't need to pick a skill.
+
+<Note>
+  The Global chat bar doesn't appear on Order pages. Use **New chat** instead.
+</Note>
+
+## What you can ask
+
+<table>
+  <colgroup>
+    <col width="183" />
+    <col width="550" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Ask the agent to</th>
+      <th>For example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Find** orders</td>
+      <td>"At-risk orders shipping in the next 2 weeks", "Orders not in any WIP tracker"</td>
+    </tr>
+    <tr>
+      <td>**Analyze**</td>
+      <td>Counts and breakdowns by supplier, owner, customer, health, or status, as a table or chart</td>
+    </tr>
+    <tr>
+      <td>**Explain**</td>
+      <td>Why an order is at risk, what a risk tag means, which steps and lead times a profile uses</td>
+    </tr>
+    <tr>
+      <td>**Update** an order</td>
+      <td>Change header fields such as dates, owner, or references</td>
+    </tr>
+    <tr>
+      <td>**Progress milestones**</td>
+      <td>Mark a step done or skipped, move a date, add a note. On one order, or the same change on many orders</td>
+    </tr>
+    <tr>
+      <td>**Manage the lifecycle**</td>
+      <td>Create an order from a description, then submit, complete, cancel, or delete it</td>
+    </tr>
+    <tr>
+      <td>**Check in on a tracker**</td>
+      <td>See how a [WIP tracker](/wip-tracker) is doing and which of its orders are at risk</td>
+    </tr>
+    <tr>
+      <td>**Triage the Inbox**</td>
+      <td>Summarize [Inbox](/inbox) items waiting for review, and what each one proposes</td>
+    </tr>
+  </tbody>
+</table>
+
+## What answers look like
+
+### A live Orders table
+
+When the answer is a set of orders, the agent shows the same table as the [Orders list](/orders), right in the chat. It's live: it shows the orders that match right now, with the health, milestone bar, and issue for each.
+
+<Frame caption="At-risk orders grouped by supplier, answered in chat.">
+  ![Agent answer to Show my at-risk orders grouped by supplier, with a summary callout and an Orders table grouped under Dongyang Lejing Garment Co., Ltd. showing two at-risk orders, plus Save as view and Open in Orders links](/images/wip/ai-orders-table.png)
+</Frame>
+
+- Ask for a breakdown ("by supplier", "per status") and the table is grouped, with counts for each group.
+- The table shows 10 rows at a time. Click **View 10 more** to see more.
+- Click **Save as view** to save the filter as a view tab on the Orders page.
+- Click **Open in Orders** to open the same set on the Orders page.
+- Click a row to open the [order's details](/order-details).
+
+For one order, the agent shows a one-row table. If you ask about its steps ("What's late on PO 4471?"), it adds a table of each milestone with its plan date, actual date, state, and notes.
+
+### Counts and charts
+
+Ask "how many" or "break down by" and the agent answers with the numbers, as a table or a chart.
+
+<Frame caption="A health breakdown shown as a chart.">
+  ![Agent answer with a donut chart of 3 orders by health, 2 at risk and 1 on track, and a short summary below](/images/wip/ai-health-chart.png)
+</Frame>
+
+### After a change
+
+After every change, the agent shows a success message with what changed, from the old value to the new one, and the order's new health. For example: `PO-4471 · revised ex-factory 2026-09-28 → 2026-10-03 · health at_risk → watch`. The updated order appears below it.
+
+## Safety and limits
+
+Reading is instant. Before some changes, the agent asks you first:
+
+| Change | Does it ask first? |
+| --- | --- |
+| One order, an exact value ("Move PO 4471's ex-factory to Oct 3") | No, it goes ahead |
+| Several orders, a relative change ("Push everything a week"), or an unclear field (ex-factory or revised ex-factory?) | Yes |
+| The same milestone change on many orders | Yes, once. Then it works through all of them and reports which succeeded and which failed |
+| Completing more than one order | Yes |
+| Cancelling or deleting an order | Always, one order at a time |
+
+The agent can't:
+
+- Apply Inbox proposals. It summarizes them and links you to the [Inbox](/receive-via-inbox), where you click **Apply**.
+- Change which orders are in a WIP tracker. Do that on the [WIP tracker](/wip-tracker) page.
+
+<Note>
+  Completing and cancelling orders is only possible through the agent today. The Orders pages don't have a button for it.
+</Note>
+
+## Example prompts
+
+<Tabs>
+  <Tab title="Find">
+    ```text
+    Show my at-risk orders grouped by supplier.
+    ```
+
+    ```text
+    Which orders ship to the customer in the next 2 weeks and aren't in a WIP tracker?
+    ```
+
+    ```text
+    Where is PO NSO-260812-TS01, and what's late on it?
+    ```
+  </Tab>
+  <Tab title="Analyze">
+    ```text
+    How many orders are at risk per supplier? Show it as a chart.
+    ```
+
+    ```text
+    Break down in-progress orders by owner and health.
+    ```
+
+    ```text
+    Why is PO NSO-260812-TS01 at risk?
+    ```
+  </Tab>
+  <Tab title="Update">
+    ```text
+    Mark PP sample sent as done on PO NSO-260812-TS01, actual date today.
+    ```
+
+    ```text
+    Move the revised ex-factory date on PO NSO-260812-TS01 to Oct 20.
+    ```
+
+    ```text
+    Mark Lab dip as skipped on every order for Northstar Outfitters.
+    ```
+
+    ```text
+    Cancel PO NSO-260812-TS03.
+    ```
+  </Tab>
+  <Tab title="Trackers & Inbox">
+    ```text
+    How is the WIP Demo tracker doing?
+    ```
+
+    ```text
+    Which WIP tracker is PO NSO-260812-TS01 in?
+    ```
+
+    ```text
+    Anything in the inbox waiting for review? What does each email propose?
+    ```
+  </Tab>
+</Tabs>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="WIP tracker" icon="paper-plane" href="/wip-tracker">
+    Batch a supplier's orders and send them a WIP sheet.
+  </Card>
+
+  <Card title="Orders" icon="table-list" href="/orders">
+    Filter, group, and act on orders in the app.
+  </Card>
+</Columns>

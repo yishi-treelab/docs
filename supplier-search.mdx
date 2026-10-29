@@ -1,0 +1,121 @@
+---
+title: "Supplier search"
+description: "Find, rank, and shortlist manufacturers with AI. Every match comes with the evidence behind it."
+icon: "industry"
+---
+
+Supplier search finds manufacturers, trading companies, and wholesalers that match your sourcing brief. It searches SourceReady's global supplier database, and your own workspace suppliers if you choose. It then scores each supplier against your requirements and shows why it matched.
+
+## Run a search
+
+<Steps>
+  <Step title="Choose Supplier search">
+    Click **Supplier search** on the input bar, or just describe a supplier need. The agent recognizes supplier requests on its own.
+  </Step>
+  <Step title="Describe your ideal supplier">
+    Include product, location, capabilities, and anything that would disqualify a supplier.
+
+    ```text
+    Cut-and-sew manufacturers in Vietnam for premium activewear brands
+    ```
+  </Step>
+  <Step title="Open the results">
+    The agent replies with a summary of the best matches and a results card. Click the card to open the full supplier list.
+  </Step>
+</Steps>
+
+<Frame caption="The agent summarizes top matches and links to the full results.">
+  <img
+    src="/images/supplier-search-chat.png"
+    alt="Supplier Results"
+    title="Supplier Results"
+    lightAlt="Supplier Results"
+    darkAlt="Supplier Results"
+  />
+</Frame>
+
+## Understanding the results
+
+Each supplier card gives you a quick profile and a match breakdown.
+
+<Frame caption="Supplier results with match score, highlights, and per-requirement evidence.">
+  ![Supplier Result](/images/supplier-result.png "Supplier Result")
+</Frame>
+
+- **Profile line**: country, year founded, headcount, and business type.
+- **Highlights**: capability tags such as _OEM manufacturer_, _High capacity factory_, _Small batch production_, or _Fortune 500 company partner_.
+- **Key customer / Key market**: who the supplier ships to and where, based on trade records.
+- **Match score**: how well the supplier meets your requirements. Expand it to see an AI summary and a card for each requirement marked _Matched_ or not, with the number of sources behind it.
+
+## Requirements vs. filters
+
+Your prompt is turned into two things you can edit from the top of the results panel:
+
+<Columns cols={2}>
+  <Card title="Requirements" icon="lightbulb">
+    Ranked criteria such as _"Product quality is premium"_. Tey **only change the ranking**: suppliers that meet more of your top requirements rise to the top. Nothing is removed.
+  </Card>
+
+  <Card title="Filters" icon="filter">
+    Hard rules such as _Location = Vietnam_ or _Email required_. Suppliers that don't pass a filter are **removed** from the results.
+  </Card>
+</Columns>
+
+<Frame caption="Requirements are ordered from most to least important.">
+  ![Requirements](/images/requirements.png "Requirements")
+</Frame>
+
+<Tip>
+  Put must-haves in **Filters** and nice-to-haves in **Requirements**. Drag your most important requirement to the top, because it carries the most weight in the match score.
+</Tip>
+
+## Manual filters
+
+Click **Manual filter** on the input bar to build a precise search yourself. You can also type a sentence into the **AI filter** box and let the agent fill in the fields.
+
+<Frame caption="The search filter panel. AI filter maps plain language onto the fields below it.">
+  ![Manual Filter](/images/manual-filter.png "Manual Filter")
+</Frame>
+
+| Section | Filter by |
+| --- | --- |
+| **General** | Supplier name, required contact info (email, phone), location, key export market, business type, search scope |
+| **Product** | Product name, category, price range, MOQ |
+| **Customer** | Brands or companies the supplier works with, minimum number of partnered customers |
+| **Highlight** | OEM / ODM, own brand, high capacity, small batch, customization, brand partners, patents, and more |
+| **Profile** | Year founded, employee count, verification, certifications (ISO 9001, BSCI, CE…) |
+| **Shipments** | Suppliers with customs data available |
+
+### Search scope
+
+Use **Search scope** to choose where the agent looks:
+
+- **All**: global database plus your workspace
+- **Public supplier**: SourceReady's global supplier database only
+- **Private supplier**: only suppliers already saved in your workspace
+
+## Take action on results
+
+<Columns cols={2}>
+  <Card title="Save" icon="bookmark">
+    Add a supplier to your workspace [supplier list](/supplier-list) so your team can track it.
+  </Card>
+
+  <Card title="Send inquiry" icon="paper-plane">
+    Start an [inquiry](/create-and-send) to one supplier, or select several and send in bulk.
+  </Card>
+</Columns>
+
+You can also keep chatting to refine results:
+
+```text
+Only keep suppliers with BSCI certification and compare the top 5 by capacity and key customers.
+```
+
+## Example prompts
+
+- `Find FDA-certified supplement manufacturers in the USA`
+- `GMP-certified cosmetic manufacturers in South Korea that do private label`
+- `Portable power station factories that already supply camping brands in the US`
+- `Denim suppliers in Turkey or Pakistan with strong washing and finishing capabilities`
+- `Show me the full profile of Elite Long Thanh Co., Ltd.`

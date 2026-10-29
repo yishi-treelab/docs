@@ -1,0 +1,182 @@
+---
+title: "Upload POs"
+description: "Turn your buyer purchase orders into tracked orders. Upload the PDF or Excel files, check what AI extracted, and save."
+icon: "file-arrow-up"
+---
+
+You'll upload one or more buyer POs, let AI read them, check the extracted orders, and save them. This is the fastest way to add orders, and the one most teams use.
+
+<Note>
+  Set up a [milestone profile](/milestones) first. Every order needs one, and its lead times fill in the plan dates for you.
+</Note>
+
+## Upload and extract
+
+<Steps>
+  <Step title="Open Import PO">
+    Go to **Order → Orders** and click **Upload POs**. The **Import PO** page opens.
+  </Step>
+  <Step title="Fill in PO info">
+    These settings apply to every order in the files you upload.
+
+    <table>
+      <colgroup>
+        <col width="247" />
+        <col width="425" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Owner**</td>
+          <td>The person on your team responsible for these orders. Defaults to you</td>
+        </tr>
+        <tr>
+          <td>**Milestone profile**</td>
+          <td>The steps these orders will track. Required. Your [default profile](/milestones#the-default-profile) is picked for you</td>
+        </tr>
+        <tr>
+          <td>**Lead times**</td>
+          <td>Which [lead time set](/milestones#set-lead-times) to use. Only shown when the profile has lead times</td>
+        </tr>
+        <tr>
+          <td>**Fill plan dates from lead times**</td>
+          <td>Fills in each step's plan date from the order's base date, such as its ex-factory date</td>
+        </tr>
+        <tr>
+          <td>**Order grain**</td>
+          <td>**One order per style** creates a separate order for each style line on the PO. **Keep as one order** keeps a multi-style PO as a single order</td>
+        </tr>
+        <tr>
+          <td>**AI instructions**</td>
+          <td>Optional hints for reading these files, such as "The PO number is in the 'Ref' column; ignore the packing list page." They're added after your saved [import instructions](/import-instructions) and win where they disagree</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <Frame caption="The Import PO page with a profile, lead times, and one PO file ready to extract.">
+      ![Import PO page with the PO info section filled in, an empty Supplier section, and one PO file listed under PO documents as Ready to extract](/images/wip/upload-po-setup.png)
+    </Frame>
+  </Step>
+  <Step title="Choose a supplier (optional)">
+    Click **Select supplier** to assign every order to one of your saved suppliers. Leave it empty and SourceReady matches the supplier named on each PO instead.
+  </Step>
+  <Step title="Add your PO files">
+    Under **PO documents**, click **Upload documents** and choose one or more files. You can upload PDF (`.pdf`) or Excel (`.xlsx`, `.xls`) files. Each file shows **Ready to extract**.
+  </Step>
+  <Step title="Click Extract">
+    AI reads each file. This usually takes under a minute, and the page updates when the files are ready. You can leave the page and come back to it from [import history](#import-history).
+
+    <Frame caption="Extracting a PO file.">
+      ![Extracting status with an elapsed timer of 8 seconds and the message This page updates when the file is ready](/images/wip/upload-po-extracting.png)
+    </Frame>
+  </Step>
+</Steps>
+
+## Review the extracted orders
+
+When extraction finishes, each file shows how many POs it found, such as **4 POs ready**, and two sections appear below it.
+
+<Frame caption="Four new orders extracted from one PO file, ready to save.">
+  ![Review page with Summary cards showing 4 orders, 4 to create, 0 to update, 0 unchanged, and an Extracted POs table listing each PO number, style, quantity, supplier, and ex-factory date with a Create action](/images/wip/upload-po-review.png)
+</Frame>
+
+**Summary** counts what saving will do:
+
+<table>
+  <colgroup>
+    <col width="112" />
+    <col width="505" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Orders**</td>
+      <td>How many orders the files produce</td>
+    </tr>
+    <tr>
+      <td>**Create**</td>
+      <td>New orders that will be added</td>
+    </tr>
+    <tr>
+      <td>**Update**</td>
+      <td>Orders that already exist and will be updated from the file</td>
+    </tr>
+    <tr>
+      <td>**Unchanged**</td>
+      <td>Orders that already exist and already match the file</td>
+    </tr>
+    <tr>
+      <td>**Failed**</td>
+      <td>Files or rows that couldn't be read. Only shown when something failed</td>
+    </tr>
+  </tbody>
+</table>
+
+**Extracted POs** lists every order with its **Action** (**Create**, **Update**, **Unchanged**, or **Failed**), the **PO #**, **Style**, **Qty**, **Supplier**, **Ex-factory** date, and more. For updates, **Changes** shows which fields will change. Use the tabs above the table to show only one action.
+
+### How existing orders are matched
+
+SourceReady matches each extracted order to an existing order by **PO #** and **Style #**. If it finds a match, the order is updated instead of created again. So it's safe to upload a revised PO: you'll see **Update** for orders whose details changed, and **Unchanged** for the rest.
+
+### If something looks wrong
+
+Edit **AI instructions** to tell AI what it missed, then click **Reprocess** on the file to read it again. You can also change **Milestone profile**, **Lead times**, **Order grain**, or the supplier before saving. The table updates to match.
+
+If the same fix applies to most of your POs, save it once in [import instructions](/import-instructions) instead.
+
+## Save
+
+Click **Save all**. A message confirms how many orders were created, updated, and left unchanged.
+
+- If you saved one order, its [detail page](/order-details) opens.
+- If you saved several, you're taken back to the [Orders list](/orders).
+
+If a supplier or product on the PO didn't match one in your workspace, a **Supplier & product matching** section lists it first:
+
+| Status | Meaning |
+| --- | --- |
+| **Linked** | Matched to a saved supplier or product |
+| **No matching supplier — left empty** | Nothing in your workspace has that name. The name from the PO is still kept on the order |
+| **More than one supplier has this name — left empty** | Several suppliers share the name, so none was picked |
+
+Fix unlinked orders later from the Orders list with **Link supplier** in [bulk actions](/orders#bulk-actions). Click **Done** to finish.
+
+<Note>
+  If you turned on **Fill plan dates from lead times** but a PO had no base date (for example, no ex-factory date), a **Plan dates skipped** card shows how many orders were affected. Add the date to those orders, then use **Fill plan dates** on the order.
+</Note>
+
+## Import history
+
+Every PO upload and WIP sheet upload is listed on the **Imports** page. Open it with **History** on the Import PO page.
+
+<Frame caption="Import history, with PO uploads and supplier WIP sheets in one list.">
+  ![Imports page listing three files with their model, source (PO Uploaded or WIP Email), file type, status, runs, touched orders, exceptions, and time](/images/wip/upload-po-history.png)
+</Frame>
+
+- Filter by **All**, **Processing**, **Completed**, or **Failed**, or search by file name.
+- **Source** shows what kind of file it was (**PO** or **WIP**) and how it arrived (**Uploaded** or **Email**).
+- **Touched** is how many orders the import created or changed.
+- Click a file name to reopen it. An import you haven't saved yet stays **Processing**, so you can come back and finish it.
+- **Import PO** and **Import WIP (Excel)** at the top start a new upload.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Orders" icon="table-list" href="/orders">
+    See your new orders and their health.
+  </Card>
+
+  <Card title="Create an order" icon="plus" href="/create-order">
+    Add a one-off order without a PO file.
+  </Card>
+</Columns>

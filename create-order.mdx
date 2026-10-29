@@ -1,0 +1,111 @@
+---
+title: "Create an order"
+description: "Add a single order by hand, for one-off orders or when you don't have a PO file."
+icon: "plus"
+---
+
+You'll fill in the **New order** form and submit it. Use this for a one-off order, or when the PO isn't in a file you can upload. For several orders at once, [upload your POs](/upload-po) instead.
+
+## Fill in the form
+
+Go to **Order → Orders** and click **Add order**. The form has up to five sections.
+
+<Steps>
+  <Step title="Order">
+    <Frame caption="The Order and Business details sections of the New order form.">
+      ![New order form with the Order section (Order name, Order, Order type, Milestone profile, Description) and the Business details section with customer, supplier, owner, date, and shipping fields](/images/wip/create-order-details.png)
+    </Frame>
+
+    <table>
+      <colgroup>
+        <col width="150" />
+        <col width="474" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>What to enter</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>**Order name**</td>
+          <td>A short title, such as style + product + date. Used as the PO # if you leave **Order** empty</td>
+        </tr>
+        <tr>
+          <td>**Order**</td>
+          <td>The PO #</td>
+        </tr>
+        <tr>
+          <td>**Order type**</td>
+          <td>**New** or **Reorder**</td>
+        </tr>
+        <tr>
+          <td>**Milestone profile**</td>
+          <td>The steps this order will track. If you leave it empty, the [default profile](/milestones#the-default-profile) is used when you submit</td>
+        </tr>
+        <tr>
+          <td>**Lead times**</td>
+          <td>Which [lead time set](/milestones#set-lead-times) to use. Only shown when the profile has lead times</td>
+        </tr>
+        <tr>
+          <td>**Description**</td>
+          <td>Notes for this order</td>
+        </tr>
+      </tbody>
+    </table>
+  </Step>
+  <Step title="Business details">
+    Fill in what you know: **Customer**, **Owner**, dates such as **Ex-factory date** and **Customer ship date**, shipping terms, and **Attachments**. Your [custom order fields](/order-fields) appear here too. See [Order fields](/order-fields#system-fields) for what each field means.
+  </Step>
+  <Step title="Plan dates">
+    Once you pick a profile with lead times and enter its base date (usually **Ex-factory date**), a **Plan dates** section appears. It previews the plan date each step will get. Leave **Fill plan dates from lead times** checked to save them.
+  </Step>
+  <Step title="Supplier">
+    <Frame caption="The Supplier and Lines sections, with Save as draft and Submit at the bottom.">
+      ![Supplier section with No supplier selected and a Select supplier button, Lines section with Add from products and Add empty line, and Cancel, Save as draft, and Submit buttons](/images/wip/create-order-supplier-lines.png)
+    </Frame>
+
+    Click **Select supplier** and pick one of your saved suppliers. It's required to submit, and optional for a draft.
+  </Step>
+  <Step title="Lines">
+    Add one line per style:
+
+    - **Add from products** (or **Select products**) fills a line from your [product list](/product-list).
+    - **Add empty line** lets you type the **Style #**, **Quantity**, price, and other line fields yourself.
+  </Step>
+</Steps>
+
+## Save as draft or submit
+
+| Button | What happens | What it needs |
+| --- | --- | --- |
+| **Save as draft** | Saves the order as **Draft** and keeps the form open, so you can finish it later | A PO # or Order name |
+| **Submit** | Creates the order as **In progress**, with its milestones, and opens its [detail page](/order-details) | A PO # or Order name, a supplier, and a **Style #** and **Quantity** on every line |
+
+If something is missing, the fields are marked **Required** and you'll see "Missing required fields" or "Select a supplier to submit".
+
+<Note>
+  Milestones are added when you submit. A draft saved without a profile has no milestones yet.
+</Note>
+
+## Edit an order
+
+Open the order and click the pencil icon (**Edit order**) in the header. The same form opens with the order's details.
+
+- For a submitted order, change what you need and click **Save**.
+- For a draft, you'll still see **Save as draft** and **Submit**.
+
+To update one milestone, you don't need the form. Click the step on the order's [milestone stepper](/order-details#update-a-milestone) instead.
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Orders" icon="table-list" href="/orders">
+    Find, filter, and act on your orders.
+  </Card>
+
+  <Card title="Order details" icon="file-lines" href="/order-details">
+    Update milestones and see an order's risk.
+  </Card>
+</Columns>

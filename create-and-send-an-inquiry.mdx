@@ -1,0 +1,104 @@
+---
+title: "Create and Send an Inquiry"
+description: "Send one RFQ to many suppliers, with personalized emails, preset questions, and target prices."
+icon: "paper-plane"
+---
+
+Each inquiry bundles the products you want quoted, the suppliers you're asking, and the questions they need to answer. SourceReady sends a personalized email to each supplier from your connected mailbox.
+
+<Info>
+  Connect your Gmail or Outlook account first. See [Set up guide](/inquiry-set-up-guide#1-connect-your-email).
+</Info>
+
+## Start an inquiry
+
+You can start from wherever you're working:
+
+| From | How |
+| --- | --- |
+| **Inquiry list** | Click **Add inquiry** |
+| **Supplier list or profile** | Click **Send inquiry** on one supplier, or select several and click **Send inquiry** in the action bar |
+| **Product list or detail** | Click **Send inquiry** on a product |
+| **AI agent** | Click **Send inquiry** on supplier search results |
+
+To add suppliers to an inquiry that's already running, click the arrow next to **Send inquiry** and choose **Send to existing inquiry**.
+
+## Choose suppliers
+
+If you start from **Add inquiry**, the **Select supplier** window opens. Describe the suppliers you want and let the AI find them, click **Manual filter** to set [filters](/search-and-filters), or pick from one of your saved lists.
+
+<Frame caption="Pick saved suppliers or describe new ones.">
+  ![Select supplier window asking What kind of supplier do you want? with supplier list tabs across the top](/images/select-supplier.png)
+</Frame>
+
+Click **Select product** to choose the products to quote, or **Confirm** to go straight to the email without products. You can add products later.
+
+<Note>
+  Adding a supplier to an inquiry unlocks its contact details if they aren't unlocked yet. This costs 20 credits per supplier.
+</Note>
+
+## Set up the inquiry
+
+The **Send inquiry** window has your settings on the left and the email on the right.
+
+<Frame caption="Settings on the left, the email template on the right.">
+  ![Send inquiry window with 50 selected suppliers on the left and the new supplier email template on the right](/images/send-inquiry.png)
+</Frame>
+
+The left panel has five sections. Each shows a summary, such as **4/6 filled** or **0 required**, so you can see what's missing at a glance.
+
+<Frame caption="The left panel sections.">
+  <img
+    src="/images/send-inquiry-2.png"
+    alt="Send Inquiry 2"
+    style={{ maxWidth: "320px" }}
+    title="Send Inquiry 2"
+  />
+</Frame>
+
+### Selected supplier
+
+Suppliers are grouped as **New** or **Existing**. Each group gets its own email template, so a first-time supplier can get an introduction while a long-time partner gets a shorter note. Change a supplier's group with the dropdown under its name.
+
+Click **Edit contacts** to choose which email addresses receive the inquiry, or to add a contact name, email, or phone number.
+
+### Selected product
+
+Click **Add product** to choose products from your [product list](/product-list). Then click **Price & Qty** to set a **Target price (USD)** and **Quantity (pcs)** for each product. For products with variants, turn on **Fill by Variant** to set a price and quantity for each color, size, or other option.
+
+### Basic info
+
+Six fields that describe the inquiry: **Inquiry name**, **Order due date**, **Owner**, **Shipping address**, **Notes**, and **Attachments**. The first three are recommended. A yellow warning shows if they're missing.
+
+### Preset questions
+
+The questions every supplier should answer, such as unit price, production lead time, sample time, and offer validity. AI reads each reply and fills in the answers for you to [compare](/quotes-and-comparison).
+
+To reuse questions, choose **Import from question template**, or **Import from files** to have AI pull questions out of a document. For each question you can set:
+
+| Option | What it does |
+| --- | --- |
+| **Required** | Marks the question as a must-answer. [Follow-ups and auto replies](/follow-up-rules) can keep going until every required question is answered |
+| **Add to initial questions** | Includes the question in the first email. The email template must contain the **Initial questions** variable |
+| **Product-specific question** | Suppliers answer it separately for each product in an attached Excel file. Requires **Set questions as attachments** |
+| **Label** | Ask the question to **all**, **new**, or **existing** suppliers only |
+
+Turn on **Set questions as attachments** to send the questions as an Excel file attached to every email, instead of in the email body.
+
+### Advance settings
+
+**Auto cc** addresses, **AI follow up**, **AI auto reply**, and the inquiry's **knowledge base**. Toggle AI follow up and AI auto reply right from the panel, or click **Rules & bases** to configure them. See [Follow-up rules](/follow-up-rules).
+
+## Write the email
+
+The email editor shows one tab per supplier group, for example **Template for new suppliers**. Each tab starts from your default [email template](/email-templates).
+
+- Grey chips like **Supplier name** or **Order due date** are variables. They're filled in for each supplier when the email is sent. Click `{}` to insert more.
+- **Improve with AI** rewrites the email based on your instructions, for example _"Make it shorter and mention we're open to a trial order."_
+- **Import template** replaces the email with a saved template. **Save as template** saves your edits for next time.
+- Click the paperclip icon to attach files.
+- Click **Preview** to see the email exactly as a specific supplier will receive it.
+
+## Send
+
+Click **Send now** to send the emails, or **Save as draft** to finish later. Once sent, the inquiry opens with its [overview](/quotes-and-comparison) so you can track replies.

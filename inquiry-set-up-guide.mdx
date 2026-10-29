@@ -1,0 +1,91 @@
+---
+title: "Set up guide"
+description: "Connect your email and set up your workspace so you can send RFQs to suppliers and let AI follow up."
+icon: "rocket"
+---
+
+An inquiry is a request for quotation (RFQ) that you send to one or more suppliers. SourceReady sends the emails from your own mailbox and tracks every reply. It also pulls each supplier's answers into a quote you can compare side by side.
+
+<Frame caption="The inquiry list shows every RFQ in your workspace.">
+  ![Inquiry list with All, Email replied, and Quotes received segments and a table of inquiries](/images/inquiry-list.png)
+</Frame>
+
+Setup takes about five minutes:
+
+<Steps>
+  <Step title="Connect your email">
+    SourceReady sends inquiries from your own Gmail or Outlook account, so suppliers reply straight to you.
+  </Step>
+  <Step title="Add your company knowledge">
+    Give the AI the facts it needs to write emails and answer supplier questions on your behalf.
+  </Step>
+  <Step title="Review your templates">
+    Check the default email template and question template, or create your own.
+  </Step>
+  <Step title="Send your first inquiry">
+    Pick suppliers and products, then send.
+  </Step>
+</Steps>
+
+## 1. Connect your email
+
+<Steps>
+  <Step title="Open Email authorization">
+    Click your avatar in the sidebar to open **Profile**, then click **Email authorization**. If you try to send an inquiry before connecting, SourceReady prompts you to **Authorize email** first.
+  </Step>
+  <Step title="Choose Gmail or Outlook">
+    Click **Authorize** on the account you use, then sign in and approve access in the pop-up window.
+
+    <Frame>
+      ![Email Authorization](/images/email-authorization.png "Email Authorization")
+    </Frame>
+  </Step>
+</Steps>
+
+<Note>
+  You can connect one email account at a time, either Gmail or Outlook. To switch, click the connected account to unauthorize it, then authorize the other one. Each teammate connects their own mailbox.
+</Note>
+
+<Warning>
+  If you unauthorize your email, or the authorization expires, SourceReady can't send inquiry emails for you until you reconnect. Failed emails show **Email not connected** or **Authorization expired** in the inquiry.
+</Warning>
+
+## 2. Add your company knowledge
+
+Go to **Settings → Inquiry → Knowledge bases** and add the facts suppliers usually ask about: payment terms, shipping preferences, quality standards, or your brand guidelines. The AI uses them when it writes emails, follow-ups, and replies.
+
+Your company profile and the inquiry's own details are included automatically, so you don't need to repeat them. See [Knowledge base](/knowledge-base).
+
+## 3. Review your templates
+
+Also under **Settings → Inquiry**:
+
+<Columns cols={2}>
+  <Card title="Question template" icon="list-check" href="/create-and-send-an-inquiry#preset-questions">
+    The questions suppliers answer in their quote, such as unit price, lead time, and sample time.
+  </Card>
+
+  <Card title="Email templates" icon="envelope" href="/email-templates">
+    The email suppliers receive. There are separate defaults for new and existing suppliers.
+  </Card>
+</Columns>
+
+SourceReady includes a ready-to-use system template for each, so you can skip this step and customize later.
+
+## 4. Send your first inquiry
+
+Click **Add inquiry** on the inquiry list, or **Send inquiry** on any supplier or product. See [Create and send](/create-and-send-an-inquiry).
+
+## Inquiry statuses
+
+| Status | Meaning |
+| --- | --- |
+| **Draft** | Saved but not sent |
+| **Pending invite** | Created, with invitations waiting to go out |
+| **Awaiting quotation** | Sent. Waiting for suppliers to reply |
+| **Email replied** | At least one supplier has replied |
+| **Quotes received** | At least one supplier has sent a quote |
+| **Completed** | Marked as done |
+| **Canceled** | Stopped. No more emails are sent |
+
+Use the segments at the top of the inquiry list (**All**, **Email replied**, **Quotes received**, and more under **More**) to filter by status.

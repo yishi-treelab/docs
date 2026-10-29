@@ -1,0 +1,317 @@
+---
+title: "Orders"
+description: "See every order's health and milestone progress in one list, find the ones that need you, and act on many at once."
+icon: "table-list"
+---
+
+The **Orders** page is where you check on production. Each row is one order, with its health, a bar of its milestones, and the issue that needs attention. Open it from **Order → Orders** in the left sidebar.
+
+<Frame caption="The Orders list, with two orders that need attention.">
+  ![Orders page with Upload POs, Upload WIP sheet, and Add order buttons, view tabs, search, Filter, stats cards for Order count, Needs attention, and In progress, and a table of orders with Health, Milestones, Issue / latest note, and Status columns](/images/wip/orders-list.png)
+</Frame>
+
+## Add orders
+
+The buttons at the top right add orders or supplier updates:
+
+<table>
+  <colgroup>
+    <col width="158" />
+    <col width="539" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Button</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Upload POs**</td>
+      <td>Create orders from buyer PO files. See [Upload POs](/upload-po)</td>
+    </tr>
+    <tr>
+      <td>**Upload WIP sheet**</td>
+      <td>Update milestones from a supplier's filled-in WIP sheet. See [Upload WIP sheet](/upload-wip-sheet)</td>
+    </tr>
+    <tr>
+      <td>**Add order**</td>
+      <td>Create one order by hand. See [Create an order](/create-order)</td>
+    </tr>
+  </tbody>
+</table>
+
+## Read a row
+
+<table>
+  <colgroup>
+    <col width="157" />
+    <col width="551" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>What it shows</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Health**</td>
+      <td>**At risk**, **Watch**, **On track**, or **Done**, with how many days late the worst step is. Health comes from your [risk tags](/risk-definition#how-tags-become-health)</td>
+    </tr>
+    <tr>
+      <td>**Milestones**</td>
+      <td>One tick per step, in profile order</td>
+    </tr>
+    <tr>
+      <td>**Issue / latest note**</td>
+      <td>The most serious problem, such as `BULK FABRIC READY IN FTY +11d` and the supplier's note. **+4** means four more issues</td>
+    </tr>
+    <tr>
+      <td>**Status**</td>
+      <td>**Draft**, **In progress**, **Completed**, or **Cancelled**</td>
+    </tr>
+  </tbody>
+</table>
+
+Click any row to open the [order's details](/order-details).
+
+### The milestone bar
+
+Each tick is one step:
+
+<table>
+  <colgroup>
+    <col width="100" />
+    <col width="386" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Green</td>
+      <td>Completed or skipped</td>
+    </tr>
+    <tr>
+      <td>Blue</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>Red</td>
+      <td>Late: past its plan date and not done</td>
+    </tr>
+    <tr>
+      <td>Grey</td>
+      <td>Not started yet</td>
+    </tr>
+  </tbody>
+</table>
+
+Hover over a tick to see the step's status, plan date, actual date, delay, and note.
+
+<Frame caption="Hovering a red tick shows why the step is late.">
+  ![Hover card for the PRODUCT TESTING COMPLETE step showing Status Delayed, Plan Sep 26 2026, and Delay +5d](/images/wip/orders-milestone-hover.png)
+</Frame>
+
+## Find orders
+
+- **Search orders** finds orders by PO #, style, and other text.
+- **Filter** narrows the list by field. Click **Add condition** to combine several, then **Apply**.
+
+<Frame caption="The Filter panel.">
+  ![Orders Filter](/images/orders-filter.png "Orders Filter")
+</Frame>
+
+You can filter on **PO #**, **Style**, **Status**, **Health**, **Milestone profile**, **Supplier**, **WIP tracker**, **Owner**, **Risk**, **Customer**, **Program**, and the order's dates. The operators depend on the field:
+
+| Field type | Operators |
+| --- | --- |
+| Text, such as PO # or Customer | **contains**, **equals**, **not equals**, **is empty**, **is not empty** |
+| Choice, such as Status or Health | **equals**, **is any of**, **is none of**, **is empty**, **is not empty** |
+| Linked records, such as Supplier or WIP tracker | **is any of**, **is none of**, **is empty**, **is not empty** |
+| Dates, such as Ex-factory | **on or after**, **on or before**, **is empty**, **is not empty** |
+
+<Tip>
+  To find orders that still need a WIP tracker, filter **WIP tracker** **is empty**.
+</Tip>
+
+## Change the layout
+
+Click the fields button (such as **7 fields**) to choose which columns to show. Click **Display** to change how the list is laid out.
+
+<Frame caption="Display options.">
+  ![Display popover with Layout set to List or Grid, Grouping set to None, and Ordering set to Default (newest first)](/images/wip/orders-display.png)
+</Frame>
+
+<table>
+  <colgroup>
+    <col width="100" />
+    <col width="628" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Layout**</td>
+      <td>**List** shows the compact milestone bar. **Grid** gives every step its own column</td>
+    </tr>
+    <tr>
+      <td>**Grouping**</td>
+      <td>Groups rows by a field, such as **Supplier**, **Health**, or **WIP tracker**. You can add a second level</td>
+    </tr>
+    <tr>
+      <td>**Ordering**</td>
+      <td>Sorts by a field, ascending or descending. The default is newest first</td>
+    </tr>
+  </tbody>
+</table>
+
+### Grid layout
+
+In **Grid**, each step is a column and each cell is a pill:
+
+<table>
+  <colgroup>
+    <col width="135" />
+    <col width="461" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Pill</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>✓ 9/21 (green)</td>
+      <td>Completed on that date</td>
+    </tr>
+    <tr>
+      <td>◐ 10/3 (blue)</td>
+      <td>In progress</td>
+    </tr>
+    <tr>
+      <td>○ 10/12</td>
+      <td>Planned for that date</td>
+    </tr>
+    <tr>
+      <td>9/20 +11d (red)</td>
+      <td>Late by that many days</td>
+    </tr>
+    <tr>
+      <td>–</td>
+      <td>No data, or the step isn't tracked</td>
+    </tr>
+  </tbody>
+</table>
+
+A small yellow dot on a pill means the supplier left a note on that step.
+
+<Frame caption="The Grid layout, with one column per milestone.">
+  ![Orders in Grid layout with a column for each milestone such as FABRIC ORDER PLACED and PP SAMPLE SENT, showing green completed dates and red late dates such as 9/9 +22d](/images/wip/orders-grid.png)
+</Frame>
+
+<Tip>
+  If your orders use different milestone profiles, group by **Milestone profile** so each group's columns line up.
+</Tip>
+
+## Save a view
+
+A view saves your filters, columns, and display settings as a tab. **All Orders** is always there.
+
+1. Set up the filters and layout you want.
+2. Click **\+ Add view**, give it a name, and click **Save**.
+3. When you change a saved view, a **Save** button appears next to its tab. Click it to keep the changes.
+
+Click **···** on an open view to **Rename** or **Delete** it.
+
+## Bulk actions
+
+Select orders with the checkboxes. A bar appears at the bottom of the page.
+
+<Frame caption="The bulk actions bar, with the More menu open.">
+  ![Bulk actions bar with 2 selected, Add to WIP tracker, Assign owner, Link supplier, and a More menu with Apply milestone profile, Fill plan dates, Recalculate plan dates, and Delete](/images/wip/orders-bulk-actions.png)
+</Frame>
+
+<table>
+  <colgroup>
+    <col width="198" />
+    <col width="523" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>What it does</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Add to WIP tracker**</td>
+      <td>Adds the orders to an active [WIP tracker](/wip-tracker), or starts a new one with **New WIP tracker with these POs**</td>
+    </tr>
+    <tr>
+      <td>**Assign owner**</td>
+      <td>Sets the owner on every selected order</td>
+    </tr>
+    <tr>
+      <td>**Link supplier**</td>
+      <td>Links orders that have no supplier yet to one of your saved suppliers. It shows the supplier names written on those POs to help you pick. Orders already linked are skipped</td>
+    </tr>
+    <tr>
+      <td>**Apply milestone profile**</td>
+      <td>Switches the orders to another profile and lead time set</td>
+    </tr>
+    <tr>
+      <td>**Fill plan dates**</td>
+      <td>Fills in empty plan dates from lead times</td>
+    </tr>
+    <tr>
+      <td>**Recalculate plan dates**</td>
+      <td>Rewrites plan dates from lead times on every open step. Completed steps keep their dates</td>
+    </tr>
+    <tr>
+      <td>**Delete**</td>
+      <td>Deletes the orders. This can't be undone</td>
+    </tr>
+  </tbody>
+</table>
+
+**Apply milestone profile**, **Fill plan dates**, **Recalculate plan dates**, and **Delete** are under **More**.
+
+### Add to a WIP tracker
+
+<Frame caption="Choosing a tracker for the selected orders.">
+  ![Add to WIP tracker dialog with a search box, a tracker named WIP Demo for Dongyang Lejing Garment Co., Ltd. with 3 POs, and a New WIP tracker with these POs link](/images/wip/orders-add-to-tracker.png)
+</Frame>
+
+Pick a tracker and click **Add**. A tracker is for one supplier, and an order can be in only one active tracker. So the dialog tells you how many orders are eligible, and skips any that are already in a tracker or belong to a different supplier.
+
+### Apply a milestone profile
+
+<Frame caption="Switching orders to a different milestone profile.">
+  ![Apply milestone profile dialog with a profile picker and a warning that current steps are replaced and every reported plan date, actual date, and note is cleared](/images/wip/orders-apply-profile.png)
+</Frame>
+
+<Warning>
+  Applying a profile to orders that already have one replaces their steps. Every reported plan date, actual date, and note on those orders is cleared, and this can't be undone.
+</Warning>
+
+## Next
+
+<Columns cols={2}>
+  <Card title="Order details" icon="file-lines" href="/order-details">
+    Open an order to update milestones and see its risk.
+  </Card>
+
+  <Card title="WIP tracker" icon="paper-plane" href="/wip-tracker">
+    Batch a supplier's orders and send them a WIP sheet.
+  </Card>
+</Columns>
